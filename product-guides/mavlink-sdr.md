@@ -1,8 +1,25 @@
-# 📎 Understanding Projects
+---
+description: Interface for interaction and configuration of Software-defined radio payload
+---
+
+# 📻 Mavlink SDR
 
 ## How Projects work
 
 Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.
+
+
+
+```mermaid
+sequenceDiagram;
+    participant GCS
+    participant Payload
+    GCS->>Payload: ASV_SDR_RECORD_REQUEST
+    GCS-->>GCS: Start receive timeout (any params)
+    Drone->>GCS: Send N parameters with PARAM_VALUE
+    GCS-->>GCS: Start receive timeout (after each param)
+    Note over GCS: Finish/timeout when no more params received
+```
 
 ### The Basics
 

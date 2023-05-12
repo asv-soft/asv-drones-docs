@@ -1,6 +1,6 @@
 # Table of contents
 
-* [👋 Welcome to A Product](README.md)
+* [👋 Welcome to Asv.Drones](README.md)
 
 ## Overview
 
@@ -10,7 +10,7 @@
 ## Product Guides
 
 * [📪 Making a post](product-guides/making-a-post.md)
-* [📎 Understanding Projects](product-guides/understanding-projects.md)
+* [📻 Mavlink SDR](product-guides/mavlink-sdr.md)
 
 ## Fundamentals
 

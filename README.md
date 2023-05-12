@@ -1,22 +1,24 @@
-# 👋 Welcome to A Product
+---
+description: >-
+  Open source user-friendly software solution designed to provide remote control
+  and monitoring of drones, payloads and RTK base stations.
+---
 
-{% hint style="info" %}
-**GitBook tip:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
-{% endhint %}
+# 👋 Welcome to Asv.Drones
 
 ## Overview
 
-Here are a couple of example overviews from products with really great docs:
+Our team create open source user-friendly software for drones:
 
-> Loom is a video messaging tool that helps you get your message across through instantly shareable videos.
->
-> With Loom, you can record your camera, microphone, and desktop simultaneously. Your video is then instantly available to share through Loom's patented technology.
->
-> — From the [Loom Docs](https://support.loom.com/hc/en-us/articles/360002158057-What-is-Loom-)
+* [Asv.Drones.Gui](https://github.com/asv-soft/asv-drones) - GUI application for contoring drones, payload, ground base stations with plugin support
+* [Asv.Drones.Gbs](https://github.com/asv-soft/asv-drones-gbs) - Ground base station service with mavlink routing and RTK mode support
+* Asv.Drones.Sdr - Drone payload equipped with Software-Defined Radio (SDR) support
 
-> The Mailchimp Marketing API provides programmatic access to Mailchimp data and functionality, allowing developers to build custom features to do things like sync email activity and campaign analytics with their database, manage audiences and campaigns, and more.
->
-> — From the [Mailchimp Marketing API docs](https://mailchimp.com/developer/marketing/docs/fundamentals/)
+We use our own open source libraries for development. If you don't want to use high-level application, look at libraries:
+
+* [Asv.Gnss](https://github.com/asv-soft/asv-gnss) - GNSS library for parsing RTCMv2, RTCMv3, NMEA and control recievers througt SBF, ComNav, UBX protocols
+* [Asv.Mavlink](https://github.com/asv-soft/asv-mavlink) - Mavlink library and code generator
+* Asv.Sdr - SDR library with fluent interface
 
 ## Quick links
 
