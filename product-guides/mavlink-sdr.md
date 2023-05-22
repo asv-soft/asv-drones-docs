@@ -14,7 +14,8 @@ Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac c
 sequenceDiagram;
     participant GCS
     participant Payload
-    GCS->>Payload: ASV_SDR_RECORD_REQUEST
+
+    GCS->>Payload: ASV_SDR_RECORD_REQUEST
     GCS-->>GCS: Start receive timeout (any params)
     Drone->>GCS: Send N parameters with PARAM_VALUE
     GCS-->>GCS: Start receive timeout (after each param)

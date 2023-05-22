@@ -4,21 +4,21 @@
 
 ## Overview
 
-* [💡 What we do](overview/what-we-do.md)
-* [✨ Our Features](overview/our-features.md)
+* [Introduction](overview/introduction/README.md)
+* [Installation & Setup](overview/installation-and-setup/README.md)
+* [Software Interface](overview/software-interface/README.md)
+* [Drone Control](overview/drone-control/README.md)
+* [Flight Functions & Modes](overview/flight-functions-and-modes/README.md)
+* [Safety & Limitations](overview/safety-and-limitations/README.md)
+* [Troubleshouting & Issue Resolution](overview/introduction/README.md)
+* [Updates & Additional Resources](overview/introduction/README.md)
+* [Conclusion](overview/conclusion/README.md)
 
 ## Product Guides
 
-* [📪 Making a post](product-guides/making-a-post.md)
 * [📻 Mavlink SDR](product-guides/mavlink-sdr.md)
-
-## Fundamentals
-
-* [🛠 Getting set up](fundamentals/getting-set-up/README.md)
-  * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-  * [🧑 Inviting Members](fundamentals/getting-set-up/inviting-members.md)
 
 ## Use Cases
 
-* [🎨 For Designers](use-cases/for-designers.md)
+* [For Users](use-cases/for-users.md)
 * [🖥 For Developers](use-cases/for-developers.md)
