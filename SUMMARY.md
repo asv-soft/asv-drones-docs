@@ -10,8 +10,8 @@
 * [Drone Control](overview/drone-control/README.md)
 * [Flight Functions & Modes](overview/flight-functions-and-modes/README.md)
 * [Safety & Limitations](overview/safety-and-limitations/README.md)
-* [Troubleshouting & Issue Resolution](overview/introduction/README.md)
-* [Updates & Additional Resources](overview/introduction/README.md)
+* [Troubleshouting & Issue Resolution](overview/troubleshooting-and-issue-resolution/README.md)
+* [Updates & Additional Resources](overview/updates-and-additional-resources/README.md)
 * [Conclusion](overview/conclusion/README.md)
 
 ## Product Guides
