@@ -7,7 +7,11 @@ As a contributor, here are the guidelines we would like you to follow:
 
  - [Question or Problem?](#question)
  - [Submission Guidelines](#submit)
+ - [Missing a feature?](#feature)
+ - [Coding rules](#rules)
  - [Commit Message Guidelines](#commit)
+ - [Branches naming](#branches)
+ - [Semantic versioning](#semver)
 
 ## <a name="question"></a> Got a Question or Problem?
 
@@ -206,6 +210,17 @@ The content of the commit message body should contain:
 - information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
 
+## <a name="branches"></a> Branches naming
+There is a short list of branch names to create:
+
+- (Feature) - used when adding new functionality on branch
+- (Hotfix) - used when fixing existed functionality on branch
+
+## <a name="semver"></a> Semantic versioning
+We use semantic versioning in our projects.
+If you want to read more about it - try visit [this site][semver].
+
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
 [github]: https://github.com/asv-soft
 [stackoverflow]: https://stackoverflow.com/questions/tagged/asv-soft
+[semver]: https://semver.org/
