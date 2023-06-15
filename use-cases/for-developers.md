@@ -198,6 +198,29 @@ Breaking Change section should start with the phrase "BREAKING CHANGE: " followe
 
 Similarly, a Deprecation section should start with "DEPRECATED: " followed by a short description of what is deprecated, a blank line, and a detailed description of the deprecation that also mentions the recommended update path.
 
+Every commit must contain footer, for our team developers footer must contain reference of a task in Asana, for common contributors - reference of an issue on GitHub.
+
+For example:
+
+Our team commit:
+
+```
+fix(asv-drones-gui-uav): change drones goto functionality
+
+Change scope of some variables of an anchor to public
+
+Asana: https://app.asana.com/0/12345678901234/1234567890123456/f 
+```
+
+Common contributor commit:
+
+```
+fix(asv-drones-gui-uav): change drones goto functionality
+
+Change scope of some variables of an anchor to public
+
+Issue: https://github.com/asv-soft/asv-drones/issues/1234   
+```
 
 ### Revert commits
 
