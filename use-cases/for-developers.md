@@ -98,11 +98,7 @@ The `footer` is mandatory for all commits. The [Commit Message Footer](#commit-f
   │       │             │
   │       │             └─⫸ Summary in present tense. Not capitalized. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: animations|bazel|benchpress|common|compiler|compiler-cli|core|
-  │                          elements|forms|http|language-service|localize|platform-browser|
-  │                          platform-browser-dynamic|platform-server|router|service-worker|
-  │                          upgrade|zone.js|packaging|changelog|docs-infra|migrations|
-  │                          devtools
+  │       └─⫸ Commit Scope: asv-common|asv-common-test|asv-cfg|asv-cfg-test|asv-drones|asv-drones-docs|asv-drones-gui|asv-drones-gbs| ... etc
   │
   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
 ```
@@ -128,6 +124,8 @@ Must be one of the following:
 The scope should be the name of the project affected (as perceived by the person reading the changelog generated from commit messages).
 
 The following is the list of supported scopes:
+
+
 
 * `asv-common`
 * `asv-common-test`
