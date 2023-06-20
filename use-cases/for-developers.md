@@ -122,10 +122,9 @@ Must be one of the following:
 
 ##### Scope
 The scope should be the name of the project affected (as perceived by the person reading the changelog generated from commit messages).
+If the scope of changes is project scope you can skip writing this. For all other scopes - you can skip main project scope e.g: asv-drones-gui-core -> core.
 
 The following is the list of supported scopes:
-
-
 
 * `asv-common`
 * `asv-common-test`
