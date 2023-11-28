@@ -12,7 +12,6 @@
 * [⚙️ Installation & Setup](overview/installation-and-setup/README.md)
   * [System requirements](overview/installation-and-setup/system-requirements.md)
   * [Downloading and installing the software](overview/installation-and-setup/downloading-and-installing-the-software.md)
-  * [Configuring the software for drone management](overview/installation-and-setup/configuring-the-software-for-drone-management.md)
   * [Connecting a drone to the software](overview/installation-and-setup/connecting-a-drone-to-the-software.md)
 
 * [⌨️ Software Interface](overview/software-interface/README.md)
