@@ -15,22 +15,25 @@
   * [Connecting a drone to the software](overview/installation-and-setup/connecting-a-drone-to-the-software.md)
 
 * [⌨️ Software Interface](overview/software-interface/README.md)
-  * [Overview of the main dashboard](overview/software-interface/overview-of-the-main-dashboard.md)
-  * [Key control elements](overview/software-interface/key-control-elements.md)
-  * [Displaying drone information](overview/software-interface/displaying-drone-information.md)
-  * [Adjusting flight parameters](overview/software-interface/adjusting-flight-parameters.md)
+  * [Application User Interface Overview](overview/software-interface/application-user-interface-overview.md)
+  * [Flight Page Overview](overview/software-interface/flight-mode-page-overview.md)
+  * [Mission Planning Overview](overview/software-interface/mission-planning-page-overview.md)
+  * [Packet Viewer Overview](overview/software-interface/packet-viewer-page-overview.md)
+  * [Connections Overview](overview/software-interface/connections-page-overview.md)
+  * [Settings Overview](overview/software-interface/settings-page-overview.md)
+  * [Log Messages Overview](overview/software-interface/log-message-page-overview.md)
 
 * [🕹️ Drone Control](overview/drone-control/README.md)
-  * [Drone calibration](overview/drone-control/drone-calibration.md)
+  <!-- * [Drone calibration](overview/drone-control/drone-calibration.md) -->
   * [Manual control](overview/drone-control/manual-control.md)
   * [Autonomous flight modes](overview/drone-control/autonomous-flight-modes.md)
   * [Preparing flight routes](overview/drone-control/preparing-flight-routes.md)
 
-* [✈️ Flight Functions & Modes](overview/flight-functions-and-modes/README.md)
+<!-- * [✈️ Flight Functions & Modes](overview/flight-functions-and-modes/README.md)
   * [Drone photography and videography](overview/flight-functions-and-modes/drone-photography-and-videography.md)
   * [Flight modes (normal, sport, positioning, etc.)](overview/flight-functions-and-modes/flight-modes.md)
   * [Autonomous control flight modes](overview/flight-functions-and-modes/autonomous-control-flight-modes.md)
-  * [Utilizing GPS and navigation functions](overview/flight-functions-and-modes/utilizing-gps-and-navigation-functions.md)
+  * [Utilizing GPS and navigation functions](overview/flight-functions-and-modes/utilizing-gps-and-navigation-functions.md) -->
 
 * [🔓 Safety & Limitations](overview/safety-and-limitations/README.md)
   * [Safe drone operation guidelines](overview/safety-and-limitations/safe-drone-operation-guidelines.md)
@@ -39,9 +42,9 @@
   * [Recommendations for preventing damages](overview/safety-and-limitations/recommendations-for-preventing-damages.md)
 
 * [🐛 Troubleshouting & Issue Resolution](overview/troubleshooting-and-issue-resolution/README.md)
-  * [Common problems and solutions](overview/troubleshooting-and-issue-resolution/common-problems-and-solutions.md)
+  <!-- * [Common problems and solutions](overview/troubleshooting-and-issue-resolution/common-problems-and-solutions.md) -->
   * [Reporting errors and debugging](overview/troubleshooting-and-issue-resolution/reporting-errors-and-debugging.md)
-  * [Frequently asked questions](overview/troubleshooting-and-issue-resolution/frequently-asked-questions.md)
+  <!-- * [Frequently asked questions](overview/troubleshooting-and-issue-resolution/frequently-asked-questions.md) -->
   * [Community and support resources](overview/troubleshooting-and-issue-resolution/community-and-support-resources.md)
 
 * [📎 Updates & Additional Resources](overview/updates-and-additional-resources/README.md)
@@ -57,10 +60,10 @@
 
 ## Product Guides
 
-* [Microservices](product-guides/microservices/README.md)
+* [📲 Microservices](product-guides/microservices/README.md)
   * [📻 Mavlink SDR](product-guides/microservices/mavlink-sdr.md)
 
 ## Use Cases
 
-* [For Users](use-cases/for-users.md)
+* [👥 For Users](use-cases/for-users.md)
 * [🖥 For Developers](use-cases/for-developers.md)
