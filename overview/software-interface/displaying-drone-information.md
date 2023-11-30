@@ -1,1 +1,0 @@
-# Displaying drone information
