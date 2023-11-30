@@ -27,7 +27,7 @@
   <!-- * [Drone calibration](overview/drone-control/drone-calibration.md) -->
   * [Manual control](overview/drone-control/manual-control.md)
   * [Autonomous flight modes](overview/drone-control/autonomous-flight-modes.md)
-  * [Preparing flight routes](overview/drone-control/preparing-flight-routes.md)
+  <!-- * [Preparing flight routes](overview/drone-control/preparing-flight-routes.md) -->
 
 <!-- * [✈️ Flight Functions & Modes](overview/flight-functions-and-modes/README.md)
   * [Drone photography and videography](overview/flight-functions-and-modes/drone-photography-and-videography.md)
@@ -37,8 +37,8 @@
 
 * [🔓 Safety & Limitations](overview/safety-and-limitations/README.md)
   * [Safe drone operation guidelines](overview/safety-and-limitations/safe-drone-operation-guidelines.md)
-  * [Restrictions and regulations for flights](overview/safety-and-limitations/restrictions-and-regulations-for-flights.md)
-  * [Emergency situation alerts](overview/safety-and-limitations/emergency-situation-alerts.md)
+  <!-- * [Restrictions and regulations for flights](overview/safety-and-limitations/restrictions-and-regulations-for-flights.md) -->
+  * [Possible Emergencies During Drone Operations](overview/safety-and-limitations/emergency-situation-alerts.md)
   * [Recommendations for preventing damages](overview/safety-and-limitations/recommendations-for-preventing-damages.md)
 
 * [🐛 Troubleshouting & Issue Resolution](overview/troubleshooting-and-issue-resolution/README.md)
@@ -49,12 +49,12 @@
 
 * [📎 Updates & Additional Resources](overview/updates-and-additional-resources/README.md)
   * [Checking for software updates](overview/updates-and-additional-resources/checking-for-software-updates.md)
-  * [Additional resources and documentation](overview/updates-and-additional-resources/additional-resources-and-documentation.md)
+  <!-- * [Additional resources and documentation](overview/updates-and-additional-resources/additional-resources-and-documentation.md) -->
   * [Recommendations for further learning](overview/updates-and-additional-resources/recommendations-for-further-learning.md)
 
 * [🧾 Conclusion](overview/conclusion/README.md)
   * [Summary and wrap-up](overview/conclusion/summary-and-wrap-up.md)
-  * [Acknowledgments and author credits](overview/conclusion/acknowledgments-and-author-credits.md)
+  <!-- * [Acknowledgments and author credits](overview/conclusion/acknowledgments-and-author-credits.md) -->
   * [Licensing information](overview/conclusion/licensing-information.md)
   * [Contact information for feedback](overview/conclusion/contact-information-for-feedback.md)
 
