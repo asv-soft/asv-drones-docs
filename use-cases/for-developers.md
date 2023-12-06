@@ -1,78 +1,67 @@
-# For developers
+# 🖥 For Developers
 
-# Contributing
+## For developers
 
-We would love for you to contribute to our projects and help make it even better than it is today!
-As a contributor, here are the guidelines we would like you to follow:
+## Contributing
 
- - [Question or Problem?](#question)
- - [Submission Guidelines](#submit)
- - [Missing a feature?](#feature)
- - [Coding rules](#rules)
- - [Commit Message Guidelines](#commit)
- - [Branches naming](#branches)
- - [Semantic versioning](#semver)
+We would love for you to contribute to our projects and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow:
 
-## <a name="question"></a> Got a Question or Problem?
+* [Submission Guidelines](for-developers.md#submit)
+* [Missing a feature?](for-developers.md#feature)
+* [Coding rules](for-developers.md#rules)
+* [Commit Message Guidelines](for-developers.md#commit)
+* [Branches naming](for-developers.md#branches)
+* [Semantic versioning](for-developers.md#semver)
 
-Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
-Instead, we recommend using [Stack Overflow](https://stackoverflow.com/questions/tagged/asv.soft) to ask support-related questions. When creating a new question on Stack Overflow, make sure to add the `angular` tag.
+Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. Instead, we recommend using [Stack Overflow](https://stackoverflow.com/questions/tagged/asv.soft) to ask support-related questions. When creating a new question on Stack Overflow, make sure to add the `angular` tag.
 
 Stack Overflow is a much better place to ask questions since:
 
-- there are thousands of people willing to help on Stack Overflow
-- questions and answers stay available for public viewing so your question/answer might help someone else
-- Stack Overflow's voting system assures that the best answers are prominently visible.
+* there are thousands of people willing to help on Stack Overflow
+* questions and answers stay available for public viewing so your question/answer might help someone else
+* Stack Overflow's voting system assures that the best answers are prominently visible.
 
 To save your and our time, we will systematically close all issues that are requests for general support and redirect people to Stack Overflow.
 
-## <a name="issue"></a> Found a Bug?
+### Found a Bug? <a href="#issue" id="issue"></a>
 
-If you find a bug in the source code, you can help us by [submitting an issue](#submit-issue) to our [GitHub Repository][github].
-Even better, you can submit a Pull Request with a fix.
+If you find a bug in the source code, you can help us by [submitting an issue](for-developers.md#submit-issue) to our [GitHub Repository](https://github.com/asv-soft). Even better, you can submit a Pull Request with a fix.
 
-## <a name="feature"></a> Missing a Feature?
-You can *request* a new feature by [submitting an issue](#submit-issue) to our GitHub Repository.
-If you would like to *implement* a new feature, please consider the size of the change in order to determine the right steps to proceed:
+### Missing a Feature? <a href="#feature" id="feature"></a>
 
-* For a **Major Feature**, first open an issue and outline your proposal so that it can be discussed.
-  This process allows us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
+You can _request_ a new feature by [submitting an issue](for-developers.md#submit-issue) to our GitHub Repository. If you would like to _implement_ a new feature, please consider the size of the change in order to determine the right steps to proceed:
 
-  **Note**: Adding a new topic to the documentation, or significantly re-writing a topic, counts as a major feature.
+*   For a **Major Feature**, first open an issue and outline your proposal so that it can be discussed. This process allows us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
 
+    **Note**: Adding a new topic to the documentation, or significantly re-writing a topic, counts as a major feature.
 * **Small Features** can be crafted and directly submitted as a Pull Request.
 
+### Submission Guidelines <a href="#submit" id="submit"></a>
 
-## <a name="submit"></a> Submission Guidelines
-
-### <a name="submit-issue"></a> Submitting an Issue
+#### Submitting an Issue <a href="#submit-issue" id="submit-issue"></a>
 
 Before you submit an issue, please search the issue tracker. An issue for your problem might already exist and the discussion might inform you of workarounds readily available.
 
-We want to fix all the issues as soon as possible, but before fixing a bug, we need to reproduce and confirm it.
-In order to reproduce bugs, we require that you provide a minimal reproduction.
-Having a minimal reproducible scenario gives us a wealth of important information without going back and forth to you with additional questions.
+We want to fix all the issues as soon as possible, but before fixing a bug, we need to reproduce and confirm it. In order to reproduce bugs, we require that you provide a minimal reproduction. Having a minimal reproducible scenario gives us a wealth of important information without going back and forth to you with additional questions.
 
 A minimal reproduction allows us to quickly confirm a bug (or point out a coding problem) as well as confirm that we are fixing the right problem.
 
-We require a minimal reproduction to save maintainers' time and ultimately be able to fix more bugs.
-Often, developers find coding problems themselves while preparing a minimal reproduction.
-We understand that sometimes it might be hard to extract essential bits of code from a larger codebase, but we really need to isolate the problem before we can fix it.
+We require a minimal reproduction to save maintainers' time and ultimately be able to fix more bugs. Often, developers find coding problems themselves while preparing a minimal reproduction. We understand that sometimes it might be hard to extract essential bits of code from a larger codebase, but we really need to isolate the problem before we can fix it.
 
 Unfortunately, we are not able to investigate / fix bugs without a minimal reproduction, so if we don't hear back from you, we are going to close an issue that doesn't have enough info to be reproduced.
 
-## <a name="rules"></a> Coding Rules
+### Coding Rules <a href="#rules" id="rules"></a>
+
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 * All features or bug fixes **must be tested** by one or more specs (unit-tests).
 * All public API methods **must be documented**.
 
-## <a name="commit"></a> Commit Message Format
+### Commit Message Format <a href="#commit" id="commit"></a>
 
-*This specification is inspired by and supersedes the [AngularJS commit message format][commit-message-format].*
+_This specification is inspired by and supersedes the_ [_AngularJS commit message format_](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1\_OOAqWjiDU5Y/edit)_._
 
-We have very precise rules over how our Git commit messages must be formatted.
-This format leads to **easier to read commit history**.
+We have very precise rules over how our Git commit messages must be formatted. This format leads to **easier to read commit history**.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
@@ -83,15 +72,14 @@ Each commit message consists of a **header**, a **body**, and a **footer**.
 <BLANK LINE>
 <footer>
 ```
-The `header` is mandatory and must conform to the [Commit Message Header](#commit-header) format.
 
-The `body` is mandatory for all commits except for those of type "docs".
-When the body is present it must be at least 20 characters long and must conform to the [Commit Message Body](#commit-body) format.
+The `header` is mandatory and must conform to the [Commit Message Header](for-developers.md#commit-header) format.
 
-The `footer` is mandatory for all commits. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
+The `body` is mandatory for all commits except for those of type "docs". When the body is present it must be at least 20 characters long and must conform to the [Commit Message Body](for-developers.md#commit-body) format.
 
+The `footer` is mandatory for all commits. The [Commit Message Footer](for-developers.md#commit-footer) format describes what the footer is used for and the structure it must have.
 
-#### <a name="commit-header"></a>Commit Message Header
+**Commit Message Header**
 
 ```
 <type>(<scope>): <short summary>
@@ -105,8 +93,7 @@ The `footer` is mandatory for all commits. The [Commit Message Footer](#commit-f
 
 The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is optional.
 
-
-##### Type
+**Type**
 
 Must be one of the following:
 
@@ -119,10 +106,9 @@ Must be one of the following:
 * **refactor**: A code change that neither fixes a bug nor adds a feature
 * **test**: Adding missing tests or correcting existing tests
 
+**Scope**
 
-##### Scope
-The scope should be the name of the project affected (as perceived by the person reading the changelog generated from commit messages).
-If the scope of changes is project scope you can skip writing this. For all other scopes - you can skip main project scope e.g: asv-drones-gui-core -> core.
+The scope should be the name of the project affected (as perceived by the person reading the changelog generated from commit messages). If the scope of changes is project scope you can skip writing this. For all other scopes - you can skip main project scope e.g: asv-drones-gui-core -> core.
 
 The following is the list of supported scopes:
 
@@ -151,7 +137,7 @@ The following is the list of supported scopes:
 * `asv-store`
 * `asv-store-test`
 
-##### Summary
+**Summary**
 
 Use the summary field to provide a succinct description of the change:
 
@@ -159,19 +145,15 @@ Use the summary field to provide a succinct description of the change:
 * don't capitalize the first letter
 * no dot (.) at the end
 
-
-#### <a name="commit-body"></a>Commit Message Body
+**Commit Message Body**
 
 Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor "fixes".
 
-Explain the motivation for the change in the commit message body. This commit message should explain _why_ you are making the change.
-You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
+Explain the motivation for the change in the commit message body. This commit message should explain _why_ you are making the change. You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
 
+**Commit Message Footer**
 
-#### <a name="commit-footer"></a>Commit Message Footer
-
-The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues, Asana tickets, and other PRs that this commit closes or is related to.
-For example:
+The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues, Asana tickets, and other PRs that this commit closes or is related to. For example:
 
 ```
 BREAKING CHANGE: <breaking change summary>
@@ -221,26 +203,22 @@ Change scope of some variables of an anchor to public
 Issue: https://github.com/asv-soft/asv-drones/issues/1234   
 ```
 
-### Revert commits
+#### Revert commits
 
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
+If the commit reverts a previous commit, it should begin with `revert:` , followed by the header of the reverted commit.
 
 The content of the commit message body should contain:
 
-- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
-- a clear description of the reason for reverting the commit message.
+* information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
+* a clear description of the reason for reverting the commit message.
 
-## <a name="branches"></a> Branches naming
+### Branches naming <a href="#branches" id="branches"></a>
+
 There is a short list of branch names to create:
 
-- (Feature) - used when adding new functionality on branch
-- (Hotfix) - used when fixing existed functionality on branch
+* (Feature) - used when adding new functionality on branch
+* (Hotfix) - used when fixing existed functionality on branch
 
-## <a name="semver"></a> Semantic versioning
-We use semantic versioning in our projects.
-If you want to read more about it - try visit [this site][semver].
+### Semantic versioning <a href="#semver" id="semver"></a>
 
-[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
-[github]: https://github.com/asv-soft
-[stackoverflow]: https://stackoverflow.com/questions/tagged/asv-soft
-[semver]: https://semver.org/
+We use semantic versioning in our projects. If you want to read more about it - try visit [this site](https://semver.org/).
