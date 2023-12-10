@@ -1,5 +1,7 @@
 ### Mission Planning Page
 
+![](images//planing-page.png)
+
 #### Overview
 
 The Mission Planning page in Asv.Drones empowers users to create, edit, and manage drone missions with ease. This page facilitates the seamless design of mission paths, incorporating various mission points and optimizing flight plans.

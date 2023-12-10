@@ -15,6 +15,8 @@
 4. **Wait for the Download to Complete:**
    - Depending on your internet connection, the download may take a few moments. Ensure that the download is complete before proceeding.
 
+![](images/github-releases.png)
+
 #### Installing Asv.Drones
 
 **Windows:**

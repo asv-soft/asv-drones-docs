@@ -1,5 +1,7 @@
 ### Application User Interface Overview
 
+![](images//application-ui.png)
+
 #### General Layout
 
 Asv.Drones features an intuitive and organized user interface designed to enhance user experience and streamline access to key functionalities. The interface consists of several key components:

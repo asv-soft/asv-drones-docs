@@ -1,5 +1,7 @@
 ### Flight Mode Page
 
+![](images//flight-page.png)
+
 #### Overview
 
 The Flight Mode page in Asv.Drones provides a dynamic and interactive environment for monitoring and controlling drones in real-time. Central to this page is a world map that serves as a visual representation of drone locations and connected devices.

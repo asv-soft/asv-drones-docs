@@ -1,5 +1,7 @@
 ### Log Messages Page
 
+![](images//log-page.png)
+
 #### Overview
 
 The Log Messages page in Asv.Drones serves as a comprehensive log viewer, displaying all logs generated within the application. This page provides users with insights into system activities, errors, and important notifications.

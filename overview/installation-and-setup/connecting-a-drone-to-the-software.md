@@ -12,9 +12,13 @@ Connecting your drone to Asv.Drones is a straightforward process that involves c
 2. **Navigate to the "Connections" Tab:**
    - Locate and click on the "Connections" tab in the main menu.
 
+![](images/connections-page-empty.png)
+
 3. **Create a New TCP Client Port:**
    - Within the "Connections" tab, find the option to create a new TCP port.
    - Choose "TCP Client" as the connection type.
+
+![](images/connections-page-add-tcp.png)
 
 4. **Configure Connection Settings:**
    - Enter the necessary details, including port name, the drone's IP address and port number.
@@ -27,6 +31,8 @@ Connecting your drone to Asv.Drones is a straightforward process that involves c
 6. **Verify Connection Status:**
    - Check the connection status to confirm a successful link.
    - If the connection is established, you are ready to control and monitor your drone using Asv.Drones.
+
+![](images/connections-page-established-connection.png)
 
 #### Additional Considerations
 

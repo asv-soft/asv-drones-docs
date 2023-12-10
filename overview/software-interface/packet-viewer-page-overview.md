@@ -1,5 +1,7 @@
 ### Packet Viewer Page
 
+![](images//packet-viewer-page.png)
+
 #### Overview
 
 The Packet Viewer page in Asv.Drones serves as a powerful tool for monitoring and analyzing communication packets exchanged between the software and connected drones and devices. This page provides real-time visibility into data transmissions, aiding users in understanding and troubleshooting communication processes.

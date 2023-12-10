@@ -1,5 +1,7 @@
 ### Connections Page
 
+![](images//connections-page.png)
+
 #### Overview
 
 The Connections page in Asv.Drones serves as a central hub for managing and configuring connections with drones and devices. This page allows users to specify essential settings for addressing and routing in the MAVLink network, add new connection ports, and monitor the status of connected devices.
