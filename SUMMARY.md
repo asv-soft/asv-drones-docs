@@ -59,11 +59,11 @@
   * [Contact information for feedback](overview/conclusion/contact-information-for-feedback.md)
 
 ## Product Guides
-
+* [🔌 Plugins development](product-guides/plugins-development/plugins-development.md)
 * [📲 Microservices](product-guides/microservices/README.md)
   * [📻 Mavlink SDR](product-guides/microservices/mavlink-sdr.md)
 
 ## Use Cases
 
 * [👥 For Users](use-cases/for-users.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [🖥 For Developers](use-cases/for-developers/for-developers.md)
