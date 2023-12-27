@@ -4,11 +4,11 @@
 
 * **Windows:**
   * Version: Windows 10 and above
-  * Architecture: 64-bit
+  * Architecture: 64-bit,32-bit
   * Additional Requirements: DirectX 11 or later
 * **Linux:**
   * Distribution: Ubuntu 22.04 LTS and equivalent
-  * Architecture: 64-bit
+  * Architecture: 64-bit,32-bit
   * Additional Requirements: OpenGL 3.3 or later
 * **Mac:**
   * Version: macOS 13 (Ventura) and above
