@@ -4,6 +4,9 @@
 
 This guide will walk you through the process of developing plugins for the `Asv.Drones.Gui` project. We'll use `Asv.Drones.Gui.Plugin.Weather` as an example as it's a simple project mainly geared towards educational purposes.
 
+All the source code of the project being analyzed is available in the repository on GitHub.
+Take a closer look - [Asv.Drones.Gui.Plugin.Weather](https://github.com/asv-soft/asv-drones-gui-weather).
+
 ## Project Naming
 
 Once you've decided on a project name, follow the plugin naming rule. The main application (`Asv.Drones.Gui`) uses a composition container to load external libraries, which implies that your plugins should be implemented as libraries. Moreover, your library files should follow the naming format `Asv.Drones.Gui.Plugin.**YourPluginName**`. In our case, it will be `Asv.Drones.Gui.Plugin.Weather`. This naming convention is crucial for the composition container to recognize and incorporate your plugin during the program start.
