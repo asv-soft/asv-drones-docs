@@ -12,7 +12,7 @@
   * Additional Requirements: OpenGL 3.3 or later
 * **Mac:**
   * Version: macOS 13 (Ventura) and above
-  * Architecture: 64-bit,32-bit
+  * Architecture: 64-bit
   * Additional Requirements: Metal 3 capable graphics card
 * **Android:**
   * Version: Android 12 and above
