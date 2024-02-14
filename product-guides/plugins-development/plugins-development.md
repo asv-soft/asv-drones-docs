@@ -860,17 +860,17 @@ This guide will walk you through the process of developing plugins for the `Asv.
 
 Once you've decided on a project name, follow the plugin naming rule. The main application (`Asv.Drones.Gui`) uses a composition container to load external libraries, which implies that your plugins should be implemented as libraries. Moreover, your library files should follow the naming format `Asv.Drones.Gui.Plugin.**YourPluginName**`. In our case, it will be `Asv.Drones.Gui.Plugin.FlightDocs`. This naming convention is crucial for the composition container to recognize and incorporate your plugin during the program start.
 
-![](img/flight-docs-project-creation.png)
+![](images/flight-docs-project-creation.png)
 
 ## Project Structure and Dependencies
 
 The structure of your files and folders should mirror that of Asv.Drones.Gui. The final project structure is depicted below.
 
-![](img/flight-docs-final-project-structure.png)
+![](images/flight-docs-final-project-structure.png)
 
 You can see that `Asv.Drones.Gui` project is present in our plugin solution. You need to add it as a Git submodule into your solution root folder as displayed in the image below.
 
-![](img/flight-docs-plugin-root-folder-structure.png)
+![](images/flight-docs-plugin-root-folder-structure.png)
 
 Next, manually add all the existing projects from `Asv.Drones.Gui`.
 
@@ -974,19 +974,19 @@ This organization mirrors the structure of the Asv.Drones.Gui solution files. Le
 
 1. **Actions:**
 
-   ![](img/actions-folder-files.png)
+   ![](images/actions-folder-files.png)
 
    This folder contains classes that implement several actions that can be perfomed while using this plugin. **FlightZoneAction** allows user to add points that represent the flight zone, **TakeOffLandAction** allows user to specify points where take off and landing will occure, **AnchorMoverAction** allows user to enable anchor editing mode where he can move anchors on map with drag-and-drop and **MapZoomAction** allows user to change map zoom.
 
 2. **Anchors:**
 
-   ![](img/anchors-folder-files.png)
+   ![](images/anchors-folder-files.png)
 
    This folder contains classes that implement anchors used in this plugin. **FlightZoneAnchor** is used to display flight zone points, **FlightZonePolygon** is used to draw a poligon that connects all flight zone points and **TakeOffLandAnchor** is used to display take off and land points.
 
 3. **Widgets:**
 
-   ![](img/widgets-folder-files.png)
+   ![](images/widgets-folder-files.png)
 
    This folder contains classes and views that implement widgets used in this plugin. **FlightZoneMapWidget** is displayed in the right side of the main screen and is used to change flight zone points location or delete them. **TakeOffLandMapWidget** is used to change take off and land points location or delete them. **FlightPlanGeneratorMapWidget** is used to fill in other flight zone relevant data, such as altitude of flight, date of flight and other information. It is later used to form Flight Plan data that can be used to request flight permission from authorities. **FlightPlanView** is a dialog popup that displays generated Flight Plan data. There is also a **FlightZoneWidgetProvider** class, which we will discuss in the next section of this guide.
 
