@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Our team create open source user-friendly software for drones:
+Our team create open source user-friendly software for drones: 
 
 * [Asv.Drones.Gui](https://github.com/asv-soft/asv-drones) - GUI application for contoring drones, payload, ground base stations with plugin support
 * [Asv.Drones.Gbs](https://github.com/asv-soft/asv-drones-gbs) - Ground base station service with mavlink routing and RTK mode support
