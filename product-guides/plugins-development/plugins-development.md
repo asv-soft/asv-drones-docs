@@ -1,19 +1,20 @@
-﻿# Plugin Development Guide
+# 🔌 Plugins development
 
-## Introduction
+## Plugin Development Guide
+
+### Introduction
 
 This guide will walk you through the process of developing plugins for the `Asv.Drones.Gui` project. We'll use `Asv.Drones.Gui.Plugin.Weather` as an example as it's a simple project mainly geared towards educational purposes.
 
-All the source code of the project being analyzed is available in the repository on GitHub.
-Take a closer look - [Asv.Drones.Gui.Plugin.Weather](https://github.com/asv-soft/asv-drones-gui-weather).
+All the source code of the project being analyzed is available in the repository on GitHub. Take a closer look - [Asv.Drones.Gui.Plugin.Weather](https://github.com/asv-soft/asv-drones-gui-weather).
 
-## Project Naming
+### Project Naming
 
 Once you've decided on a project name, follow the plugin naming rule. The main application (`Asv.Drones.Gui`) uses a composition container to load external libraries, which implies that your plugins should be implemented as libraries. Moreover, your library files should follow the naming format `Asv.Drones.Gui.Plugin.**YourPluginName**`. In our case, it will be `Asv.Drones.Gui.Plugin.Weather`. This naming convention is crucial for the composition container to recognize and incorporate your plugin during the program start.
 
 ![](images/project-creation.png)
 
-## Project Structure and Dependencies
+### Project Structure and Dependencies
 
 The structure of your files and folders should mirror that of Asv.Drones.Gui. The final project structure is depicted below.
 
@@ -32,6 +33,7 @@ Ensure the addition of crucial dependencies such as:
 * Asv.Drones.Gui.Custom.props file - used for managing the versions of required NuGet packages.
 
 Below is the structure of `Asv.Drones.Gui.Custom.props` file. Copy this structure as it mentions the versions of all critical NuGet packages.
+
 ```xml
 <Project>
   <ItemGroup>
@@ -175,39 +177,38 @@ public class WeatherPlugin : IPluginEntryPoint
 The WeatherPlugin class implements the IPluginEntryPoint interface and the PluginEntryPoint attribute. This designates the WeatherPlugin class as a plugin entry point. The creation policy for the entry point is always shared.
 
 The plugin project is organized into several folders:
+
 * **Controls:** Contains all custom controls.
 * **Service:** Provides all services.
 * **Shell:** Includes all shell pages, view-models, and views.
 
 This organization mirrors the structure of the Asv.Drones.Gui solution files. Let's explore the contents of these folders:
 
-1. **Controls:**
+1.  **Controls:**
 
-   ![Control Folder Files](images/controls-folder-files.png)
+    ![Control Folder Files](images/controls-folder-files.png)
 
-   The only file here is **WindIndicator**. This simple custom control adjusts to the given wind angle.
+    The only file here is **WindIndicator**. This simple custom control adjusts to the given wind angle.
+2.  **Service:**
 
-2. **Service:**
+    ![Service Folder Files](images/service-folder-files.png)
 
-   ![Service Folder Files](images/service-folder-files.png)
+    This folder implements the weather service class and interface. The Providers folder currently houses two weather providers: Windy and OpenWeatherMap. The service is implemented here for the following reasons: to save and load the last weather data when the weather button is displayed, to download weather data from the selected provider, to save the last selected provider and its API key, and to control the visibility of the action button.
+3.  **Shell:**
 
-   This folder implements the weather service class and interface. The Providers folder currently houses two weather providers: Windy and OpenWeatherMap. The service is implemented here for the following reasons: to save and load the last weather data when the weather button is displayed, to download weather data from the selected provider, to save the last selected provider and its API key, and to control the visibility of the action button.
+    ![Shell Folder Files](images/shell-folder-files.png)
 
-3. **Shell:**
+    There are two views and view-models for the weather. The first is used to add an **action button** to our flight page.
 
-   ![Shell Folder Files](images/shell-folder-files.png)
+    ![Weather Action Button](images/weather-action-button.png)
 
-   There are two views and view-models for the weather. The first is used to add an **action button** to our flight page.
+    The second is used to display the weather settings in the program settings list.
 
-   ![Weather Action Button](images/weather-action-button.png)
+    ![Weather Settings](images/weather-settings.png)
 
-   The second is used to display the weather settings in the program settings list.
+### Code Explanation
 
-   ![Weather Settings](images/weather-settings.png)
-
-## Code Explanation
-
-### Weather Action Button
+#### Weather Action Button
 
 To better understand the action button's functionality, let's examine its view, code-behind, and view-model!
 
@@ -239,6 +240,7 @@ We'll start with the view:
     </Button>
 </UserControl>
 ```
+
 * **Namespaces:** The script starts by defining namespaces. These help the XAML parser understand the meaning of the elements and attributes in your markup. Apart from the standard XAML namespaces, additional namespaces for AvaloniaUI, Material Icons for Avalonia, and the specific Weather plugin are also included.
 * **UserControl:** This primary object represented by the top-level UserControl element is the primary object that this XAML defines. UserControl serves as a base class for creating custom, reusable controls.
   * The `x:Class` attribute specifies the code-behind class for this XAML file. Here, the value is `Asv.Drones.Gui.Plugin.Weather.WeatherActionView`.
@@ -399,6 +401,7 @@ public class WeatherActionViewModel : MapActionBase
     }
 }
 ```
+
 * **Dependencies:**
   * The class employs MEF (Managed Extensibility Framework) as a form of dependency injection, as indicated by the Export and ImportingConstructor attributes. The dependencies in this class include `IWeatherService` and `ILocalizationService`.
 * **Design Mode Behavior:**
@@ -410,7 +413,7 @@ public class WeatherActionViewModel : MapActionBase
 * **Initialization:**
   * The `Init` method establishes the command, the map center, and subscribes to the `CurrentWeatherData` property's changes. Accordingly, it updates the UI (Wind direction, Wind speed, Temperature, and triggers the `LastWeatherData` event) whenever `CurrentWeatherData` changes. Upon initializing it, the method returns an instance of the class.
 
-### Weather Settings
+#### Weather Settings
 
 Here's the view:
 
@@ -608,9 +611,9 @@ Here are several key points:
 5. **Properties:** `WeatherProviders` returns available weather providers, and `WeatherIcon`, `WeatherApiKeyIcon`, and `WeatherSwitchIcon` methods fetch data to display specific icons in the UI.
 6. Overall, this class acts as a bridge between the view and the model, manipulating data given by `IWeatherService` and presenting it to the UI in an engaging manner. Changes in the reactive properties will reflect in the UI, offering real-time interactivity.
 
-### Weather service class and interface
+#### Weather service class and interface
 
-#### Interface 
+**Interface**
 
 ```csharp
 using System.Collections.Generic;
@@ -631,7 +634,7 @@ public interface IWeatherService
 }
 ```
 
-#### Class
+**Class**
 
 ```csharp
 using System;
@@ -785,7 +788,7 @@ Within the `WeatherService` class:
 * Every time there's a shift in a reactive property, the corresponding method (like `SetVisibility`, `SetCurrentProvider`, `SetCurrentProviderApiKey`, `SetLastWeatherData`) is invoked, which in turn updates the configuration accordingly.
 * The `GetWeatherData(GeoPoint location)` method fetches weather data for a specific location.
 
-### WeatherData and IWeatherProviderBase
+#### WeatherData and IWeatherProviderBase
 
 ```csharp
 using System.Threading.Tasks;
@@ -820,7 +823,7 @@ One note to make is that the `GeoPoint` type is not defined in this code snippet
 
 Any class intending to provide weather data would implement this interface, permitting different providers to be easily swapped out without the rest of the codebase needing to know where the data comes from. By using an interface, concrete implementations can have distinct behaviors yet still conform to a contract defined by the interface, thus promoting code reusability and modularity.
 
-## Another example
+### Another example
 
 **Asv.Drones.Gui.Plugin.FlightDocs** stands as another example of an open-source plugin implementation for the Asv.Drones.Gui project.
 
@@ -830,12 +833,13 @@ In this instructive endeavor, you will discover how to empower your interface wi
 
 The project's file structure, meticulously crafted to emulate that of the primary `Asv.Drones.Gui` project, is not a mere coincidence. Rather, it is a deliberate choice, as this structured approach proves most advantageous for the development and upkeep of open-source plugins meant to enrich the functionality of the core application.
 
-## How to build
+### How to build
 
-Make sure the next components are installed: 
-* .NET SDK 7 - https://dotnet.microsoft.com/en-us/download/dotnet/7.0 
+Make sure the next components are installed:
+
+* .NET SDK 7 - https://dotnet.microsoft.com/en-us/download/dotnet/7.0
 * AvaloniaUI Templates - https://docs.avaloniaui.net/docs/get-started/install
-* Avalonia XAML development - https://docs.avaloniaui.net/docs/get-started/set-up-an-editor 
+* Avalonia XAML development - https://docs.avaloniaui.net/docs/get-started/set-up-an-editor
 
 After you installed all of these, you need to follow the steps:
 
@@ -844,25 +848,25 @@ After you installed all of these, you need to follow the steps:
 3. Execute `git submodule init` command to initialize Asv.Drones.Gui as a submodule;
 4. Execute `git submodule update` to set latest version on Asv.Drones.Gui submodule;
 5. Then you need to restore NuGet packages in a plugin project with `dotnet restore`, `nuget restore` or through IDE;
-6. Finally - try to build your project with `dotnet build` or through IDE. 
+6. Finally - try to build your project with `dotnet build` or through IDE.
 
-## How to use
+### How to use
 
 After building the source code of the plugin project, the final library should be placed in the directory of the already built `Asv.Drones.Gui` application, the next time you launch the application CompositionContainer will see the library and add it to the common list of libraries loaded at startup.
 
-# Plugin development guide
+## Plugin development guide
 
-## Introduction
+### Introduction
 
 This guide will walk you through the process of developing plugins for the `Asv.Drones.Gui` project. We'll use `Asv.Drones.Gui.Plugin.FlightDocs` as an example as it's a simple project mainly geared towards educational purposes.
 
-## Project Naming
+### Project Naming
 
 Once you've decided on a project name, follow the plugin naming rule. The main application (`Asv.Drones.Gui`) uses a composition container to load external libraries, which implies that your plugins should be implemented as libraries. Moreover, your library files should follow the naming format `Asv.Drones.Gui.Plugin.**YourPluginName**`. In our case, it will be `Asv.Drones.Gui.Plugin.FlightDocs`. This naming convention is crucial for the composition container to recognize and incorporate your plugin during the program start.
 
 ![](images/flight-docs-project-creation.png)
 
-## Project Structure and Dependencies
+### Project Structure and Dependencies
 
 The structure of your files and folders should mirror that of Asv.Drones.Gui. The final project structure is depicted below.
 
@@ -881,6 +885,7 @@ Ensure the addition of crucial dependencies such as:
 * Asv.Drones.Gui.Custom.props file - used for managing the versions of required NuGet packages.
 
 Below is the structure of `Asv.Drones.Gui.Custom.props` file. Copy this structure as it mentions the versions of all critical NuGet packages.
+
 ```xml
 <Project>
   <ItemGroup>
@@ -966,37 +971,36 @@ public class FlightDocsPlugin : IPluginEntryPoint
 The FlightDocsPlugin class implements the IPluginEntryPoint interface and the PluginEntryPoint attribute. This designates the FlightDocsPlugin class as a plugin entry point. The creation policy for the entry point is always shared.
 
 The plugin project has Map folder, which contains several more folders:
+
 * **Actions:** Contains all actions that can be perfomed within plugin.
 * **Anchors:** Contains all anchors used to mark points on a map.
 * **Widgets:** Includes all widgets and dialogs used by plugin.
 
 This organization mirrors the structure of the Asv.Drones.Gui solution files. Let's explore the contents of these folders:
 
-1. **Actions:**
+1.  **Actions:**
 
-   ![](images/actions-folder-files.png)
+    ![](images/actions-folder-files.png)
 
-   This folder contains classes that implement several actions that can be perfomed while using this plugin. **FlightZoneAction** allows user to add points that represent the flight zone, **TakeOffLandAction** allows user to specify points where take off and landing will occure, **AnchorMoverAction** allows user to enable anchor editing mode where he can move anchors on map with drag-and-drop and **MapZoomAction** allows user to change map zoom.
+    This folder contains classes that implement several actions that can be perfomed while using this plugin. **FlightZoneAction** allows user to add points that represent the flight zone, **TakeOffLandAction** allows user to specify points where take off and landing will occure, **AnchorMoverAction** allows user to enable anchor editing mode where he can move anchors on map with drag-and-drop and **MapZoomAction** allows user to change map zoom.
+2.  **Anchors:**
 
-2. **Anchors:**
+    ![](images/anchors-folder-files.png)
 
-   ![](images/anchors-folder-files.png)
+    This folder contains classes that implement anchors used in this plugin. **FlightZoneAnchor** is used to display flight zone points, **FlightZonePolygon** is used to draw a poligon that connects all flight zone points and **TakeOffLandAnchor** is used to display take off and land points.
+3.  **Widgets:**
 
-   This folder contains classes that implement anchors used in this plugin. **FlightZoneAnchor** is used to display flight zone points, **FlightZonePolygon** is used to draw a poligon that connects all flight zone points and **TakeOffLandAnchor** is used to display take off and land points.
+    ![](images/widgets-folder-files.png)
 
-3. **Widgets:**
+    This folder contains classes and views that implement widgets used in this plugin. **FlightZoneMapWidget** is displayed in the right side of the main screen and is used to change flight zone points location or delete them. **TakeOffLandMapWidget** is used to change take off and land points location or delete them. **FlightPlanGeneratorMapWidget** is used to fill in other flight zone relevant data, such as altitude of flight, date of flight and other information. It is later used to form Flight Plan data that can be used to request flight permission from authorities. **FlightPlanView** is a dialog popup that displays generated Flight Plan data. There is also a **FlightZoneWidgetProvider** class, which we will discuss in the next section of this guide.
 
-   ![](images/widgets-folder-files.png)
+### Code Explanation
 
-   This folder contains classes and views that implement widgets used in this plugin. **FlightZoneMapWidget** is displayed in the right side of the main screen and is used to change flight zone points location or delete them. **TakeOffLandMapWidget** is used to change take off and land points location or delete them. **FlightPlanGeneratorMapWidget** is used to fill in other flight zone relevant data, such as altitude of flight, date of flight and other information. It is later used to form Flight Plan data that can be used to request flight permission from authorities. **FlightPlanView** is a dialog popup that displays generated Flight Plan data. There is also a **FlightZoneWidgetProvider** class, which we will discuss in the next section of this guide.
-
-## Code Explanation
-
-### Basic Code Structure
+#### Basic Code Structure
 
 The basics of code structure are the same as for any other MVVM application, written using Avalonia UI. You can check out more details about this topic in our Weather Plugin example written above.
 
-### Interaction between plugin and main software
+#### Interaction between plugin and main software
 
 Now lets discuss how plugins can interact with main projects codebase. For example, **FlightZoneWidgetProvider** class is used to create and provide map widget view models for flight zones. It takes in a localization service and configuration as inputs when constructed.
 
@@ -1022,9 +1026,7 @@ public class FlightZoneWidgetProvider : ViewModelProviderBase<IMapWidget>
 }
 ```
 
-The main purpose of this class is to create view model instances for different map widgets related to flight zones and add them to the Source collection. It does this by calling the AddOrUpdate method in the constructor, passing new instances of the **FlightZoneMapWidgetViewModel**, **TakeOffLandMapWidgetViewModel**, and **FlightPlanGeneratorMapWidgetViewModel** classes.
-These view model classes are specific to different flight zone related map widgets. The **FlightZoneWidgetProvider** doesn't contain the implementation logic for these view models. It just handles creating them and adding them to the Source collection.
-The Source collection property is from the base **ViewModelProviderBase** class, which is a Core class from parent project asv-drones. This contains the view model instances that this provider creates. Other code can then get the appropriate view model from this Source collection for a given map widget type.
+The main purpose of this class is to create view model instances for different map widgets related to flight zones and add them to the Source collection. It does this by calling the AddOrUpdate method in the constructor, passing new instances of the **FlightZoneMapWidgetViewModel**, **TakeOffLandMapWidgetViewModel**, and **FlightPlanGeneratorMapWidgetViewModel** classes. These view model classes are specific to different flight zone related map widgets. The **FlightZoneWidgetProvider** doesn't contain the implementation logic for these view models. It just handles creating them and adding them to the Source collection. The Source collection property is from the base **ViewModelProviderBase** class, which is a Core class from parent project asv-drones. This contains the view model instances that this provider creates. Other code can then get the appropriate view model from this Source collection for a given map widget type.
 
 So in summary, the **FlightZoneWidgetProvider** class is responsible for creating and providing the view models for flight zone related map widgets. It encapsulates the view model creation logic in one place and exposes the view models through the Source collection for other code to use. This allows separating the view model creation from the consumption.
 
@@ -1059,14 +1061,16 @@ public class FlightZoneMapAnchorProvider : ViewModelProviderBase<IMapAnchor>
 }
 ```
 
-It takes in a SourceList of IMapAnchor objects as input via the Update method. The IMapAnchor objects contain the data for the anchors to display on the map (e.g. location coordinates, title, etc.).
-The Update method subscribes to events on the input SourceList to keep the **FlightZoneMapAnchorProvider's** own Source property in sync. When anchors are added or removed from the input, it adds or removes them from its own Source respectively.
-The Source property is used as the output - it contains the latest set of IMapAnchor objects that should be displayed on the map. By syncing it to the input SourceList, it ensures the map view model always has the updated anchor data.
+It takes in a SourceList of IMapAnchor objects as input via the Update method. The IMapAnchor objects contain the data for the anchors to display on the map (e.g. location coordinates, title, etc.). The Update method subscribes to events on the input SourceList to keep the **FlightZoneMapAnchorProvider's** own Source property in sync. When anchors are added or removed from the input, it adds or removes them from its own Source respectively. The Source property is used as the output - it contains the latest set of IMapAnchor objects that should be displayed on the map. By syncing it to the input SourceList, it ensures the map view model always has the updated anchor data.
 
-#### The main logic flow is:
-##### 1. The Update method is called with a SourceList containing map anchors
-##### 2. It subscribes to events on that SourceList
-##### 3. When anchors are added/removed from the input, it updates its own Source property accordingly
-##### 4. The Source property is used by the map view model to show the anchors
+**The main logic flow is:**
+
+**1. The Update method is called with a SourceList containing map anchors**
+
+**2. It subscribes to events on that SourceList**
+
+**3. When anchors are added/removed from the input, it updates its own Source property accordingly**
+
+**4. The Source property is used by the map view model to show the anchors**
 
 So in summary, the **FlightZoneMapAnchorProvider** acts as a bridge between an input SourceList of anchors and the view model. It propagates changes to the anchors to keep the view model up to date. This allows the view model to always display the latest anchor data.

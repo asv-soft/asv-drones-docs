@@ -1,1 +1,2 @@
-# Safety and limitations
+# 🔓 Safety & Limitations
+

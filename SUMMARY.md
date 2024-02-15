@@ -20,6 +20,8 @@
   * [Connections Overview](overview/software-interface/connections-page-overview.md)
   * [Settings Overview](overview/software-interface/settings-page-overview.md)
   * [Log Messages Overview](overview/software-interface/log-message-page-overview.md)
+  * [Example Of Usage With GBS](overview/software-interface/example-of-usage-with-gbs.md)
+  * [Example Of Usage With SDR](overview/software-interface/example-of-usage-with-sdr.md)
 * [🕹️ Drone Control](overview/drone-control/README.md)
   * [Manual control](overview/drone-control/manual-control.md)
   * [Autonomous flight modes](overview/drone-control/autonomous-flight-modes.md)
