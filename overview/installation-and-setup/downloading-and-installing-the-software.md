@@ -35,19 +35,23 @@
 
 **Linux:**
 
-1. **Extract the Archive:**
-   - Open a terminal window and navigate to the directory where the downloaded package is located.
-   - Extract the contents of the package using a command like `tar -xvf your-software-name-linux.tar.gz`.
-
-2. **Navigate to the Installation Directory:**
-   - Use the terminal to navigate to the extracted directory: `cd your-software-name-linux`.
-
-3. **Run the Installation Script:**
-   - Execute the installation script, typically named `install.sh`, by running `./install.sh`.
-
-4. **Follow On-Screen Instructions:**
-   - The installation script will provide on-screen instructions.
-   - Follow the prompts to complete the installation.
+   **For Debian systems**:
+   * Open terminal and navigate to downloaded .deb package.
+   * Execute following command (replace packet_name with real packet name):
+      ```
+      sudo dpkg -i packet_name.deb
+      ```
+   
+   **For RedHat systems**:
+   * Open terminal and navigate to downloaded .deb package.
+   * If you using rpm - execute following command (replace packet_name with real packet name):
+      ```
+      sudo rpm -ivh packet_name.rpm
+      ```
+   * If you using dnf - execute following command (replace packet_name with real packet name):
+      ```
+      sudo dnf install packet_name.rpm
+      ```
 
 **macOS:**
 
