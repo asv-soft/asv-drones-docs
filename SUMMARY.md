@@ -11,6 +11,7 @@
 * [⚙️ Installation & Setup](overview/installation-and-setup/README.md)
   * [System requirements](overview/installation-and-setup/system-requirements.md)
   * [Downloading and installing the software](overview/installation-and-setup/downloading-and-installing-the-software.md)
+  * [Building from source code](overview/installation-and-setup/building-from-source-code.md)
   * [Connecting a drone to the software](overview/installation-and-setup/connecting-a-drone-to-the-software.md)
 * [⌨️ Software Interface](overview/software-interface/README.md)
   * [Application User Interface Overview](overview/software-interface/application-user-interface-overview.md)
