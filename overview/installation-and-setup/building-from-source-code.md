@@ -143,3 +143,14 @@ To build applications for Android, additional setup is required for JDK and Andr
 ![](images/ubuntu-asv-drones-repo-desktop.jpg)
 
 ##### macOS environment setup example
+
+![](images/macos-dotnet-sdk-install.jpg)
+![](images/macos-dotnet-sdk-install-complete.jpg)
+![](images/macos-asv-drones-repo.jpg)
+![](images/macos-asv-drones-repo-complete.jpg)
+![](images/macos-asv-drones-repo-desktop-workload-restore.jpg)
+![](images/macos-asv-drones-repo-desktop-workload-restore-complete.jpg)
+![](images/macos-asv-drones-repo-desktop-build.jpg)
+![](images/macos-asv-drones-repo-desktop-build-complete.jpg)
+![](images/macos-asv-drones-repo-desktop-run.jpg)
+![](images/macos-asv-drones-repo-desktop.jpg)
