@@ -57,6 +57,14 @@ Congratulations! Your development environment is now set up, and you are ready t
 
 To build applications for Android, additional setup is required for JDK and Android SDK installation. Follow the instructions below based on your operating system.
 
+- Navigate to the platform project directory and restore the required dependencies:
+
+   ```bash
+   cd asv-drones/src/Asv.Drones.Gui.Android
+   dotnet workload restore
+   dotnet workload repair
+   ```
+
 ##### Windows
 
 1. Install the .NET MAUI Check tool to verify your environment is ready for .NET MAUI development:
