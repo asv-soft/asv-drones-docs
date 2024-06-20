@@ -50,4 +50,4 @@
 ## Use Cases
 
 * [👥 For Users](use-cases/for-users.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [🖥️ For Developers](use-cases/for-developers.md)
