@@ -8,6 +8,8 @@ This guide will walk you through the process of developing plugins for the `Asv.
 
 All the source code of the project being analyzed is available in the repository on GitHub. Take a closer look - [Asv.Drones.Gui.Plugin.Weather](https://github.com/asv-soft/asv-drones-gui-weather).
 
+Also check [Asv.Drones.Gui.Plugin.Example](https://github.com/asv-soft/asv-drones-gui-plugin-example) - you can use this as example or template.
+
 ### Project Naming
 
 Once you've decided on a project name, follow the plugin naming rule. The main application (`Asv.Drones.Gui`) uses a composition container to load external libraries, which implies that your plugins should be implemented as libraries. Moreover, your library files should follow the naming format `Asv.Drones.Gui.Plugin.**YourPluginName**`. In our case, it will be `Asv.Drones.Gui.Plugin.Weather`. This naming convention is crucial for the composition container to recognize and incorporate your plugin during the program start.
@@ -16,15 +18,8 @@ Once you've decided on a project name, follow the plugin naming rule. The main a
 
 ### Project Structure and Dependencies
 
-The structure of your files and folders should mirror that of Asv.Drones.Gui. The final project structure is depicted below.
-
-![](images/final-project-structure.png)
-
-You can see that `Asv.Drones.Gui` project is present in our plugin solution. You need to add it as a Git submodule into your solution root folder as displayed in the image below.
-
-![](images/plugin-root-folder-structure.png)
-
-Next, manually add all the existing projects from `Asv.Drones.Gui`.
+Make sure your plugin project in a directory parallel to the main `ASV.Drones` project.
+![](images//root-folder-plugins-example.png)
 
 Ensure the addition of crucial dependencies such as:
 
@@ -32,103 +27,94 @@ Ensure the addition of crucial dependencies such as:
 * App.axaml file - helps in importing and exporting styles and custom controls.
 * Asv.Drones.Gui.Custom.props file - used for managing the versions of required NuGet packages.
 
-Below is the structure of `Asv.Drones.Gui.Custom.props` file. Copy this structure as it mentions the versions of all critical NuGet packages.
+Below is the structure of `Asv.Drones.Gui.Custom.props` file. This describes all dependencies with main project. Specify an `<ApiVersion>` at your plugin project same 
 
 ```xml
 <Project>
-  <ItemGroup>
-    <ProjectReference Condition="'$(ProjectName)' == 'Asv.Drones.Gui'" Include="$(SolutionDir)$(SolutionName)\$(SolutionName).csproj" >
-    </ProjectReference>
-  </ItemGroup>
+    <PropertyGroup>
+        <ProductVersion>1.0.1</ProductVersion>
+        <ApiVersion>1.0.1</ApiVersion>
+        <ApiPrevVersion>1.0.0</ApiPrevVersion>
+        <AvaloniaVersion>11.0.6</AvaloniaVersion>
+        <AsvCommonVersion>2.0.2</AsvCommonVersion>
+        <AsvAvaloniaToolkitVersion>1.0.1</AsvAvaloniaToolkitVersion>
+        <AsvAvaloniaMapVersion>2.0.5</AsvAvaloniaMapVersion>
+        <AsvMavlinkVersion>3.10.0</AsvMavlinkVersion>
+        <FluentAvaloniaUIVersion>2.0.5</FluentAvaloniaUIVersion>
+        <ReactiveUIVersion>19.5.41</ReactiveUIVersion>
+        <SystemReactiveVersion>6.0.0</SystemReactiveVersion>
+        <MaterialIconsAvaloniaVersion>2.0.1</MaterialIconsAvaloniaVersion>
+        <ReactiveUIValidationVersion>3.1.7</ReactiveUIValidationVersion>
+        <CompositionVersion>8.0.0</CompositionVersion>
+    </PropertyGroup>
+</Project>
+```
+
+After set up the properties, your plugin `Custom.props` file should look like this below.
+```xml
+<Project>
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <ProductVersion>0.1.0</ProductVersion>
-    <AvaloniaVersion>11.0.5</AvaloniaVersion>
-    <AsvCommonVersion>1.13.1</AsvCommonVersion>
-    <AsvMavlinkVersion>3.6.0-alpha11</AsvMavlinkVersion>
-    <FluentAvaloniaUIVersion>2.0.0</FluentAvaloniaUIVersion>
-    <ReactiveUIVersion>19.3.3</ReactiveUIVersion>
-    <MaterialIconsAvaloniaVersion>2.0.1</MaterialIconsAvaloniaVersion>
-    <ReactiveUIValidationVersion>3.1.7</ReactiveUIValidationVersion>
-    <CompositionVersion>7.0.0</CompositionVersion>
-    <NLogVersion>5.2.6</NLogVersion>
+    <ProductVersion>1.0.0</ProductVersion>
+    <ApiVersion>1.0.1</ApiVersion>
+    <ReactiveUIVersion>19.5.41</ReactiveUIVersion>
   </PropertyGroup>
 </Project>
 ```
 
-And you must do the same thing into Weather project file.
+Finally, set up the `.csproj` file with `PackageReference` manually or via NuGet packages (recommend). Special warning to `<OutputPath>` attribute. It needs to way to the plugins folder of main project `Asv.Drones`
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(SolutionDir)Asv.Drones.Gui.Custom.props"/>
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Configurations>Debug;Release</Configurations>
-    <Platforms>AnyCPU</Platforms>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>Asv.Drones.Gui.Plugin.Weather</RootNamespace>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <AssemblyVersion>$(ProductVersion)</AssemblyVersion>
+        <FileVersion>$(ProductVersion)</FileVersion>
+        <Version>$(ProductVersion)</Version>
+        <Title>Weather</Title>
+        <Authors>https://github.com/asv-soft</Authors>
+        <Description>Asv.Drones GUI application plugin to display and customize current weather using Windy and OpenWeatherMap providers.</Description>
+        <Copyright>https://github.com/asv-soft</Copyright>
+        <PackageProjectUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather?tab=MIT-1-ov-file#readme</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Asv.Cfg" Version="$(AsvCommonVersion)" />
-    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.Xaml.Interactions" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="FluentAvaloniaUI" Version="$(FluentAvaloniaUIVersion)" />
-    <PackageReference Include="Material.Icons.Avalonia" Version="$(MaterialIconsAvaloniaVersion)" />
-    <PackageReference Include="ReactiveUI" Version="$(ReactiveUIVersion)" />
-    <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)" />
-    <PackageReference Include="ReactiveUI.Validation" Version="$(ReactiveUIValidationVersion)" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="$(CompositionVersion)" />
-  </ItemGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <OutputPath>..\..\..\asv-drones\src\Asv.Drones.Gui.Desktop\bin\Debug\net8.0\asv-data-folder\plugins\Asv.Drones.Gui.Plugin.Weather\</OutputPath>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="RS.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RS.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RS.ru.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Remove="obj\**" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Asv.Drones.Gui.Api" Version="$(ApiVersion)" />
+        <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="RS.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RS.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Shell\Pages\Settings\Weather\WeatherSettingsView.axaml.cs">
-      <DependentUpon>WeatherSettingsView.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Controls\WindIndicator.axaml.cs">
-      <DependentUpon>WindIndicator.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <ItemGroup>
+        <EmbeddedResource Update="RS.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>RS.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
 
-    <Compile Update="Shell\Pages\Map\Actions\WeatherActionView.axaml.cs">
-      <DependentUpon>WeatherView.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\asv-drones\src\Asv.Drones.Gui.Core\Asv.Drones.Gui.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="$(SolutionDir)Asv.Drones.Gui.Custom.props">
-      <Link>Asv.Drones.Gui.Custom.props</Link>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+        <Compile Update="RS.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>RS.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
 
 </Project>
 ```
+
+Now you can launch project, and make sure it displays in plugins list
+
+![](images//weather-plugin-display-example.png)
 
 Once we've completed the initial steps, we can proceed further.
 
@@ -837,7 +823,7 @@ The project's file structure, meticulously crafted to emulate that of the primar
 
 Make sure the next components are installed:
 
-* .NET SDK 7 - https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+* .NET SDK 8 - https://dotnet.microsoft.com/en-us/download/dotnet/8.0
 * AvaloniaUI Templates - https://docs.avaloniaui.net/docs/get-started/install
 * Avalonia XAML development - https://docs.avaloniaui.net/docs/get-started/set-up-an-editor
 
@@ -888,23 +874,22 @@ Below is the structure of `Asv.Drones.Gui.Custom.props` file. Copy this structur
 
 ```xml
 <Project>
-  <ItemGroup>
-    <ProjectReference Condition="'$(ProjectName)' == 'Asv.Drones.Gui'" Include="$(SolutionDir)$(SolutionName)\$(SolutionName).csproj" >
-    </ProjectReference>
-  </ItemGroup>
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <ProductVersion>0.1.0</ProductVersion>
-    <AvaloniaVersion>11.0.5</AvaloniaVersion>
-    <AsvCommonVersion>1.13.1</AsvCommonVersion>
-    <AsvMavlinkVersion>3.6.0-alpha11</AsvMavlinkVersion>
-    <FluentAvaloniaUIVersion>2.0.0</FluentAvaloniaUIVersion>
-    <ReactiveUIVersion>19.3.3</ReactiveUIVersion>
-    <MaterialIconsAvaloniaVersion>2.0.1</MaterialIconsAvaloniaVersion>
-    <ReactiveUIValidationVersion>3.1.7</ReactiveUIValidationVersion>
-    <CompositionVersion>7.0.0</CompositionVersion>
-    <NLogVersion>5.2.6</NLogVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <ProductVersion>1.0.1</ProductVersion>
+        <ApiVersion>1.0.1</ApiVersion>
+        <ApiPrevVersion>1.0.0</ApiPrevVersion>
+        <AvaloniaVersion>11.0.6</AvaloniaVersion>
+        <AsvCommonVersion>2.0.2</AsvCommonVersion>
+        <AsvAvaloniaToolkitVersion>1.0.1</AsvAvaloniaToolkitVersion>
+        <AsvAvaloniaMapVersion>2.0.5</AsvAvaloniaMapVersion>
+        <AsvMavlinkVersion>3.10.0</AsvMavlinkVersion>
+        <FluentAvaloniaUIVersion>2.0.5</FluentAvaloniaUIVersion>
+        <ReactiveUIVersion>19.5.41</ReactiveUIVersion>
+        <SystemReactiveVersion>6.0.0</SystemReactiveVersion>
+        <MaterialIconsAvaloniaVersion>2.0.1</MaterialIconsAvaloniaVersion>
+        <ReactiveUIValidationVersion>3.1.7</ReactiveUIValidationVersion>
+        <CompositionVersion>8.0.0</CompositionVersion>
+    </PropertyGroup>
 </Project>
 ```
 
