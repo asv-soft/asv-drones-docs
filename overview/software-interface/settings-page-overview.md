@@ -1,6 +1,6 @@
 ### Settings Page
 
-![](images//settings-page.png)
+![](images//settings-page-appearance-common.png)
 
 #### Overview
 
@@ -26,7 +26,7 @@ The Settings page in Asv.Drones offers users the flexibility to personalize thei
 
 #### Measurement Units
 
-![](images//settings-page-measurement-units.png)
+![](images//settings-page-appearance-measurement-units.png)
 
 - **Distance, Altitude, Latitude, Longitude, Velocity, Temperature, etc.:**
   - Users can customize measurement units for various parameters, tailoring the display of distances, velocities, temperatures, and other measurements to their preferred units.
@@ -34,7 +34,6 @@ The Settings page in Asv.Drones offers users the flexibility to personalize thei
 #### SDR Settings
 
 ![](images//settings-page-sdr-settings.png)
-
 
 - **Frequency of Writing to File:**
   - Users can adjust the frequency at which data from Software-Defined Radio (SDR) is written to file, providing control over data storage.
@@ -56,3 +55,45 @@ The Settings page in Asv.Drones offers users the flexibility to personalize thei
   - In this section, users can add and manage saved coordinates for later use. This can be particularly useful for quick access to frequently used locations.
 
 The Settings page provides users with the ability to tailor Asv.Drones to their preferences, enhancing the overall user experience.
+
+#### Plugins
+
+![](images//settings-plugin-common.png)
+
+The Plugins page allows the user to control plugins for ASV Drones. The page has three sections.
+- Market
+- Installed
+- Servers
+
+#### Market
+Allows you to view plugins available for installation
+
+![](images//settings-page-plugins-market.png)
+
+#### Installed
+This section displays plugins installed from the Market or assemblies added during compilation to asv-data-folder/plugins
+
+![](images//settings-page-plugins-installed.png)
+
+#### Installed Plugins Troubleshooting 
+
+In case of plugin errors, an error message will display the problem
+
+![](images//settings-page-plugins-installed-error.png)
+
+#### Servers
+The page allows you to add a new plugin source or change an existing one (nuget by default)
+![](images//settings-page-plugins-server.png)
+
+Click "Add" button at top-right corner to add a new source
+
+![](images//settings-page-plugins-server-add.png)
+
+Example of usage:
+- Name - can be any what you want;
+- URL Address - link to nuget server;
+- Username - username at your GitHub profile;
+- Password - token that you got for private server, or your own for public.
+
+
+
