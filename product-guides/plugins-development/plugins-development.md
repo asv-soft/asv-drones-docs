@@ -8,7 +8,7 @@ This guide will walk you through the process of developing plugins for the `Asv.
 
 All the source code of the project being analyzed is available in the repository on GitHub. Take a closer look - [Asv.Drones.Gui.Plugin.Weather](https://github.com/asv-soft/asv-drones-gui-weather).
 
-Also check [Asv.Drones.Gui.Plugin.Example](https://github.com/asv-soft/asv-drones-gui-plugin-example) - you can use this as example or template.
+Also check out [Asv.Drones.Gui.Plugin.Example](https://github.com/asv-soft/asv-drones-gui-plugin-example) - you can use this as an example or template for plugin development.
 
 ### Project Naming
 
@@ -18,16 +18,16 @@ Once you've decided on a project name, follow the plugin naming rule. The main a
 
 ### Project Structure and Dependencies
 
-Make sure your plugin project in a directory parallel to the main `ASV.Drones` project.
+Make sure your plugin project is located in a directory alongside the main `ASV.Drones` project.
 ![](images//root-folder-plugins-example.png)
 
 Ensure the addition of crucial dependencies such as:
 
 * Resource files (RS.resx) - necessary for text localization.
 * App.axaml file - helps in importing and exporting styles and custom controls.
-* Asv.Drones.Gui.Custom.props file - used for managing the versions of required NuGet packages.
+* Directory.Build.props file - used for managing the versions of required NuGet packages.
 
-Below is the structure of `Asv.Drones.Gui.Custom.props` file. This describes all dependencies with main project. Specify an `<ApiVersion>` at your plugin project same 
+Below is the structure of `Directory.Build.props` file. This describes all dependencies of the main project. Specify an `<ApiVersion>` for your plugin project in the same way 
 
 ```xml
 <Project>
@@ -50,7 +50,7 @@ Below is the structure of `Asv.Drones.Gui.Custom.props` file. This describes all
 </Project>
 ```
 
-After set up the properties, your plugin `Custom.props` file should look like this below.
+After `Directory.Build.props` of your plugin is set up, it should look something like this:
 ```xml
 <Project>
   <PropertyGroup>
@@ -62,7 +62,7 @@ After set up the properties, your plugin `Custom.props` file should look like th
 </Project>
 ```
 
-Finally, set up the `.csproj` file with `PackageReference` manually or via NuGet packages (recommend). Special warning to `<OutputPath>` attribute. It needs to way to the plugins folder of main project `Asv.Drones`
+Finally, set up the `.csproj` file with `PackageReference` that will reference `ApiVersion` from `Directory.Build.props` file. If you want to debug your plugin using the main `Asv.Drones` app - set up `<OutputPath>` attribute. It must point to the plugins folder of the main `Asv.Drones` project. You can also set this up by adding a .NET Executable Run/Debug configuration in your IDE.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -112,7 +112,7 @@ Finally, set up the `.csproj` file with `PackageReference` manually or via NuGet
 </Project>
 ```
 
-Now you can launch project, and make sure it displays in plugins list
+Now you can build your plugin, and check if it is displayed in installed plugins list
 
 ![](images//weather-plugin-display-example.png)
 
@@ -868,9 +868,9 @@ Ensure the addition of crucial dependencies such as:
 
 * Resource files (RS.resx) - necessary for text localization.
 * App.axaml file - helps in importing and exporting styles and custom controls.
-* Asv.Drones.Gui.Custom.props file - used for managing the versions of required NuGet packages.
+* Directory.Build.props file - used for managing the versions of required NuGet packages.
 
-Below is the structure of `Asv.Drones.Gui.Custom.props` file. Copy this structure as it mentions the versions of all critical NuGet packages.
+Below is the structure of `Directory.Build.props` file. Copy this structure as it mentions the versions of all critical NuGet packages.
 
 ```xml
 <Project>

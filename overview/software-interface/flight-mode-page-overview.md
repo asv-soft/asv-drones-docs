@@ -13,7 +13,7 @@ The Flight Mode page in Asv.Drones provides a dynamic and interactive environmen
 
 - **Interactive Anchors:**
   - Users can interact with anchors by clicking on them, revealing additional information and options related to the corresponding drone or device.
-  - Many anchors in close area? Right click there to open context menu and select anchor you need.
+  - Many anchors in close area? Right click there to open context menu and select the anchor you need.
 
 #### Widget Layout
 
@@ -24,7 +24,7 @@ The Flight Mode page is designed with dedicated spaces for different types of wi
   
 - **Bottom Widgets:**
   - **Log Widget:** Displays system logs and messages, allowing users to monitor important events and notifications during drone operations.
-  - **Anchors Editor Widget:** Empty until the user selects any anchor on the map. It allows the user to edit the anchor's location and altitude if the selected anchor is editable, and the Move Anchors toggle is active. Use this widget to control your UAV - all available actions displays here.
+  - **Anchors Editor Widget:** Empty until any anchor on the map is selected. It allows editing of anchor's location and altitude if the selected anchor is editable and the Move Anchors toggle is active. Use this widget to control your UAV - all available actions are displayed here.
 
 #### Additional Functionalities
 - **Zoom Controls:**

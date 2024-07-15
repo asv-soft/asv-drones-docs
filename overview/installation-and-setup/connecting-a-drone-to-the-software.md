@@ -9,8 +9,8 @@ Connecting your drone to Asv.Drones is a straightforward process that involves c
 1. **Open Asv.Drones:**
    - Launch Asv.Drones on your device.
 
-2. **Navigate to the "Connections" div at Settings page:**
-   - Locate and click on the "Ports" sub-div in the main menu.
+2. **Navigate to the "Connections" menu in Settings:**
+   - Locate and click on the "Ports" sub-menu.
 
 ![](images/connections-page-empty.png)
 
@@ -31,7 +31,7 @@ Connecting your drone to Asv.Drones is a straightforward process that involves c
 ![](images/connections-page-established-connection.png)
 
 6. **Verify Connection Status:**
-   - Check the connection status at "Device list" sub-div to confirm a successful link.
+   - Check the connection status at "Device list" sub-menu to confirm a successful link.
    - If the connection is established, you are ready to control and monitor your drone using Asv.Drones.
 
 ![](images//connections-page-connected-devices.png)

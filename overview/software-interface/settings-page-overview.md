@@ -60,7 +60,7 @@ The Settings page provides users with the ability to tailor Asv.Drones to their 
 
 ![](images//settings-plugin-common.png)
 
-The Plugins page allows the user to control plugins for ASV Drones. The page has three sections.
+The Plugins menu allows users to control plugins for ASV Drones. It has three sections:
 - Market
 - Installed
 - Servers
@@ -71,7 +71,7 @@ Allows you to view plugins available for installation
 ![](images//settings-page-plugins-market.png)
 
 #### Installed
-This section displays plugins installed from the Market or assemblies added during compilation to asv-data-folder/plugins
+This section displays plugins installed from the Market or assemblies added during compilation. Plugins are installed in asv-data-folder/plugins folder.
 
 ![](images//settings-page-plugins-installed.png)
 
@@ -82,18 +82,18 @@ In case of plugin errors, an error message will display the problem
 ![](images//settings-page-plugins-installed-error.png)
 
 #### Servers
-The page allows you to add a new plugin source or change an existing one (nuget by default)
+This section allows you to add a new plugin source or change an existing one (nuget by default)
 ![](images//settings-page-plugins-server.png)
 
-Click "Add" button at top-right corner to add a new source
+Click "Add" button at top-right corner to add a new source. To change an existing one click "Pen" button, and to delete - click "Cross" button.
 
 ![](images//settings-page-plugins-server-add.png)
 
 Example of usage:
-- Name - can be any what you want;
-- URL Address - link to nuget server;
-- Username - username at your GitHub profile;
-- Password - token that you got for private server, or your own for public.
+- Name - any text;
+- URL Address - link to a nuget server;
+- Username - username used to access your custom nuget source;
+- Password - password used to access your custom nuget source.
 
 
 
