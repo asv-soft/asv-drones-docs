@@ -11,7 +11,7 @@ To ensure a smooth development experience, follow the steps below to set up your
     If you are using [Visual Studio](https://visualstudio.microsoft.com/) you should install [Avalonia for Visual Studio](https://docs.avaloniaui.net/docs/get-started/set-up-an-editor#visual-studio) plugin to be able working with axaml files using a preview.
 
 #### 3.2 .NET Installation:
-- This project is built using [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0) and [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0), the latests version of the .NET platform. We recommend installing .NET 7.0 by following the instructions provided on the official [.NET website](https://dotnet.microsoft.com/download/dotnet/7.0).
+- This project is built using [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0), the latests version of the .NET platform. We recommend installing .NET 8.0 by following the instructions provided on the official [.NET website](https://dotnet.microsoft.com/download/dotnet/8.0).
 
    ```bash
    # Check your current .NET version

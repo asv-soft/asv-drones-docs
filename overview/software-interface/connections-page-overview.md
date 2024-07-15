@@ -1,13 +1,13 @@
 ### Connections Page
 
-![](images//connections-page.png)
+![](images//connections-page-empty.png)
 
 #### Overview
 
 The Connections page in Asv.Drones serves as a central hub for managing and configuring connections with drones and devices. This page allows users to specify essential settings for addressing and routing in the MAVLink network, add new connection ports, and monitor the status of connected devices.
 
-#### Settings
-
+#### Mavlink Settings
+![](images//connections-page-mavlink.png)
 1. **System ID and Component ID:**
    - These settings are required for addressing and routing in the MAVLink network. Users must specify a unique System ID and Component ID to ensure proper communication between Asv.Drones and connected devices.
 
@@ -18,12 +18,13 @@ The Connections page in Asv.Drones serves as a central hub for managing and conf
    - After the specified timeout period, devices that have not sent a heartbeat message will be removed from the device list, helping to manage and update the list of connected devices.
 
 #### Connection Ports
+![](images//connections-page-established-connection.png)
 
 - **Add New Connection Ports:**
   - Users can add new connection ports to establish communication with devices. Supported connection types include serial ports, TCP ports, and UDP ports.
 
 #### Connected Devices List
-
+![](images//connections-page-connected-devices.png)
 - **Device Status and Description:**
   - At the bottom of the Connections page, users can view a list of all connected devices. Each device is accompanied by its status and a basic description, providing insights into the current state of the connections.
 

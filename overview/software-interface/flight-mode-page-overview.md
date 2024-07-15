@@ -12,24 +12,21 @@ The Flight Mode page in Asv.Drones provides a dynamic and interactive environmen
   - The world map displays anchors representing drones and other connected devices.
 
 - **Interactive Anchors:**
-  - Users can interact with anchors by clicking on them, revealing additional information, controls, and options related to the corresponding drone or device.
+  - Users can interact with anchors by clicking on them, revealing additional information and options related to the corresponding drone or device.
+  - Many anchors in close area? Right click there to open context menu and select the anchor you need.
 
 #### Widget Layout
 
 The Flight Mode page is designed with dedicated spaces for different types of widgets, providing a comprehensive view of telemetry data, SDR information, and logs.
 
 - **Left Sidebar Widgets:**
-  - **Telemetry Widgets:** Display real-time telemetry data for drones and ground base stations. Information includes altitude, speed, battery level, and other relevant metrics.
-  - **Anchors Editor Widget:** Appears when the user selects any anchor on the map. It allows the user to edit the anchor's location and altitude if the selected anchor is editable, and the Move Anchors toggle is active. 
-
-- **Right Sidebar Widgets:**
-  - **SDR Widgets:** Provide information about connected Software-Defined Radio (SDR) payloads, including frequency, signal strength, and modulation details.
-
+  - **Telemetry Widgets:** Display real-time telemetry data for drones and [ground base stations](https://github.com/asv-soft/asv-drones-gui-plugin-gbs). Information includes altitude, speed, battery level, and other relevant metrics.
+  
 - **Bottom Widgets:**
   - **Log Widget:** Displays system logs and messages, allowing users to monitor important events and notifications during drone operations.
+  - **Anchors Editor Widget:** Empty until any anchor on the map is selected. It allows editing of anchor's location and altitude if the selected anchor is editable and the Move Anchors toggle is active. Use this widget to control your UAV - all available actions are displayed here.
 
 #### Additional Functionalities
-
 - **Zoom Controls:**
   - Users can adjust the map zoom level to focus on specific areas of interest.
 
@@ -39,4 +36,4 @@ The Flight Mode page is designed with dedicated spaces for different types of wi
 - **Ruler Tool:**
   - The ruler tool provides a convenient way to measure ground distances on the map. Users can place two markers on the map, and the tool will display the distance between them, aiding in mission planning and navigation.
 
-By leveraging the Flight Mode page, users can actively monitor and control drones, access real-time telemetry data, manage SDR payloads, and make informed decisions during missions.
+By leveraging the Flight Mode page, users can actively monitor and control drones, access real-time telemetry data, and make informed decisions during missions.
