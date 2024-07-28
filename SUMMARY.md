@@ -50,8 +50,6 @@
 ## Libraries
 
 * [🧊 Asv.Mavlink](libraries/asv-mavlink.md)
-* [📲 Microservices](libraries/microservices/README.md)
-  * [📻 Mavlink SDR](libraries/microservices/mavlink-sdr.md)
 
 ## Use Cases
 
