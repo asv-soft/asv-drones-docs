@@ -47,6 +47,12 @@
 * [📲 Microservices](product-guides/microservices/README.md)
   * [📻 Mavlink SDR](product-guides/microservices/mavlink-sdr.md)
 
+## Libraries
+
+* [🧊 Asv.Mavlink](libraries/asv-mavlink.md)
+* [📲 Microservices](libraries/microservices/README.md)
+  * [📻 Mavlink SDR](libraries/microservices/mavlink-sdr.md)
+
 ## Use Cases
 
 * [👥 For Users](use-cases/for-users.md)
