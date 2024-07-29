@@ -117,13 +117,13 @@ Base properties are needed to fill [ADSB\_VEHICLE](https://mavlink.io/en/message
       ...
 ```
 
-#### Example to use at [Asv.Drones](https://github.com/asv-soft/asv-drones).&#x20;
+#### Here's an example of ADSB utility being used with [Asv.Drones](https://github.com/asv-soft/asv-drones).&#x20;
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcQBEOFoUIITaF6DOPy-bSk2HMPm61togLZanzggqhUxTJjTIeTwExO-bEmJgOTtyg-Tsf1jJ9fbPG77JjlRdgBjvIMa0n70tn1UhzXlvBjJ9dREZnC9VQlpfY84DWKOMxe88h0028gDvhwufpWkv3-QNIg?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles at Asv.Drones</p></figcaption></figure>
+<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcQBEOFoUIITaF6DOPy-bSk2HMPm61togLZanzggqhUxTJjTIeTwExO-bEmJgOTtyg-Tsf1jJ9fbPG77JjlRdgBjvIMa0n70tn1UhzXlvBjJ9dREZnC9VQlpfY84DWKOMxe88h0028gDvhwufpWkv3-QNIg?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles in Asv.Drones</p></figcaption></figure>
 
-#### Example to use at [Mission Planner](https://ardupilot.org/planner/)
+#### Here's an example of ADSB utility being used with [Mission Planner](https://ardupilot.org/planner/)
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXej5GPu0BsBKrnTfU7dvP4IfRriZe6Sbf5CWpym9CyD1oCpP1aGrDe0kqbZdZzMnsZ3itB4g2h-ZE9Q4jP5stl9KEJg1juKRIWubK_kbkJ3h7ij6pLYCR2LwXSxUGXDABWGietZnXLcUC0O7ajs5WS_T78?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles at Mission Planner</p></figcaption></figure>
+<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXej5GPu0BsBKrnTfU7dvP4IfRriZe6Sbf5CWpym9CyD1oCpP1aGrDe0kqbZdZzMnsZ3itB4g2h-ZE9Q4jP5stl9KEJg1juKRIWubK_kbkJ3h7ij6pLYCR2LwXSxUGXDABWGietZnXLcUC0O7ajs5WS_T78?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles in Mission Planner</p></figcaption></figure>
 
 
 
