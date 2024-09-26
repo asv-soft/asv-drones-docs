@@ -1,5 +1,5 @@
 ---
-description: .NET Mavlink library and tools
+description: .NET Mavlink library and CLI for .NET
 ---
 
 # 🧊 Asv.Mavlink
@@ -18,9 +18,9 @@ To install the [`asv-mavlink`](https://github.com/asv-soft/asv-mavlink) library,
 dotnet add package Asv.Mavlink --version <Version>
 ```
 
-## Asv.Mavlink.Shell: Virtual ADSB reciever
+## CLI: Emulate ADSB reciever
 
-This command starts a virtual ADS-B receiver that sends  [ADSB\_VEHICLE](https://mavlink.io/en/messages/common.html#ADSB\_VEHICLE) packets at a specified rate for every vehicle defined in the configuration file.
+This command starts a virtual ADS-B receiver that sends [ADSB\_VEHICLE](https://mavlink.io/en/messages/common.html#ADSB\_VEHICLE) packets at a specified rate for every vehicle defined in the configuration file.
 
 Executing this command launches an emulator for an ADS-B receiver, generating and transmitting ADSB\_VEHICLE data packets for virtual vehicles. These packets include information such as position, speed, and other ADS-B message parameters. The vehicles and their respective parameters are specified in the configuration file.
 
@@ -35,7 +35,7 @@ Asv.Mavlink.Shell adsb --cfg=adsb.json
 
 If the configuration file does not exist, the command generates a default configuration file named `adsb.json` with two vehicles that fly in a box pattern over an airport.
 
-#### Base properies
+#### Configuration file: Base properies
 
 ```json
 {
@@ -46,7 +46,7 @@ If the configuration file does not exist, the command generates a default config
 }
 ```
 
-#### Connections
+#### Configuration file: Connections
 
 You can add multiple ports at once. All packets will be routed by other ports.
 
@@ -86,7 +86,7 @@ You can add multiple ports at once. All packets will be routed by other ports.
 
 ```
 
-#### Vehicles
+#### Configuration file: Vehicles
 
 Base properties are needed to fill [ADSB\_VEHICLE](https://mavlink.io/en/messages/common.html#ADSB\_VEHICLE). You can add multiple route points and different velocities for each point. Velocity will be interpolated between points. Latitude and Longitude can be in DMS or angle format (see [GeoPointLatitudeTest.cs](https://github.com/asv-soft/asv-common/blob/main/src/Asv.Common.Test/GeoPointLatitudeTest.cs) and [GeoPointLongitudeTest.cs](https://github.com/asv-soft/asv-common/blob/main/src/Asv.Common.Test/GeoPointLongitudeTest.cs)). Altitude is in meters. Velocity is in three dimensions in m/s. It will be separated by ground and vertical velocity if altitude between two route points is different. Velocity must be greater than 0.
 
@@ -117,7 +117,7 @@ Base properties are needed to fill [ADSB\_VEHICLE](https://mavlink.io/en/message
       ...
 ```
 
-#### Here's an example of ADSB utility being used with [Asv.Drones](https://github.com/asv-soft/asv-drones).&#x20;
+#### Here's an example of ADSB utility being used with [Asv.Drones](https://github.com/asv-soft/asv-drones).
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcQBEOFoUIITaF6DOPy-bSk2HMPm61togLZanzggqhUxTJjTIeTwExO-bEmJgOTtyg-Tsf1jJ9fbPG77JjlRdgBjvIMa0n70tn1UhzXlvBjJ9dREZnC9VQlpfY84DWKOMxe88h0028gDvhwufpWkv3-QNIg?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles in Asv.Drones</p></figcaption></figure>
 
@@ -125,5 +125,98 @@ Base properties are needed to fill [ADSB\_VEHICLE](https://mavlink.io/en/message
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXej5GPu0BsBKrnTfU7dvP4IfRriZe6Sbf5CWpym9CyD1oCpP1aGrDe0kqbZdZzMnsZ3itB4g2h-ZE9Q4jP5stl9KEJg1juKRIWubK_kbkJ3h7ij6pLYCR2LwXSxUGXDABWGietZnXLcUC0O7ajs5WS_T78?key=riwOy4U3j_pq7fFAx1ly_w" alt=""><figcaption><p>ADSB vehicles in Mission Planner</p></figcaption></figure>
 
+## CLI: Packet code generation
 
+Generate C# code for packet serialization\deserialization
 
+```bash
+// run code gen
+Asv.Mavlink.Shell gen -t=[mavlink-xml-file] -i=[mavlink-xml-folder] -o=[output-folder] -e=cs [path-to-liquid-template]/csharp.tpl
+```
+
+This command load XML file with mavlink packet definition
+
+```xml
+<message id="0" name="HEARTBEAT">
+   <description>The heartbeat message shows that a system or component is present and responding. The type and autopilot fields (along with the message component id), allow the receiving system to treat further messages from this system appropriately (e.g. by laying out the user interface based on the autopilot). This microservice is documented at https://mavlink.io/en/services/heartbeat.html</description>
+   <field type="uint8_t" name="type" enum="MAV_TYPE">Vehicle or component type. For a flight controller component the vehicle type (quadrotor, helicopter, etc.). For other components the component type (e.g. camera, gimbal, etc.). This should be used in preference to component id for identifying the component type.</field>
+   <field type="uint8_t" name="autopilot" enum="MAV_AUTOPILOT">Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.</field>
+   <field type="uint8_t" name="base_mode" enum="MAV_MODE_FLAG" display="bitmask">System mode bitmap.</field>
+   <field type="uint32_t" name="custom_mode">A bitfield for use for autopilot-specific flags</field>
+   <field type="uint8_t" name="system_status" enum="MAV_STATE">System status flag.</field>
+   <field type="uint8_t_mavlink_version" name="mavlink_version">MAVLink version, not writable by user, gets added by protocol because of magic data type: uint8_t_mavlink_version</field>
+</message>
+```
+
+And generate CSharp file, like this:
+
+<pre class="language-csharp"><code class="lang-csharp"><strong>    /// &#x3C;summary>
+</strong>    ///  HEARTBEAT
+    /// &#x3C;/summary>
+    public class HeartbeatPayload : IPayload
+    {
+        public byte GetMaxByteSize() => 9; // Sum of byte sized of all fields (include extended)
+        public byte GetMinByteSize() => 9; // of byte sized of fields (exclude extended)
+        public int GetByteSize()
+        {
+            var sum = 0;
+            sum+=4; //CustomMode
+            sum+= 1; // Type
+            sum+= 1; // Autopilot
+            sum+= 1; // BaseMode
+            sum+= 1; // SystemStatus
+            sum+=1; //MavlinkVersion
+            return (byte)sum;
+        }
+        public void Deserialize(ref ReadOnlySpan&#x3C;byte> buffer)
+        {
+            CustomMode = BinSerialize.ReadUInt(ref buffer);
+            Type = (MavType)BinSerialize.ReadByte(ref buffer);
+            Autopilot = (MavAutopilot)BinSerialize.ReadByte(ref buffer);
+            BaseMode = (MavModeFlag)BinSerialize.ReadByte(ref buffer);
+            SystemStatus = (MavState)BinSerialize.ReadByte(ref buffer);
+            MavlinkVersion = (byte)BinSerialize.ReadByte(ref buffer);
+        }
+
+        public void Serialize(ref Span&#x3C;byte> buffer)
+        {
+            BinSerialize.WriteUInt(ref buffer,CustomMode);
+            BinSerialize.WriteByte(ref buffer,(byte)Type);
+            BinSerialize.WriteByte(ref buffer,(byte)Autopilot);
+            BinSerialize.WriteByte(ref buffer,(byte)BaseMode);
+            BinSerialize.WriteByte(ref buffer,(byte)SystemStatus);
+            BinSerialize.WriteByte(ref buffer,(byte)MavlinkVersion);
+            /* PayloadByteSize = 9 */;
+        }
+        /// &#x3C;summary>
+        /// A bitfield for use for autopilot-specific flags
+        /// OriginName: custom_mode, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public uint CustomMode { get; set; }
+        /// &#x3C;summary>
+        /// Vehicle or component type. For a flight controller component the vehicle type (quadrotor, helicopter, etc.). For other components the component type (e.g. camera, gimbal, etc.). This should be used in preference to component id for identifying the component type.
+        /// OriginName: type, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public MavType Type { get; set; }
+        /// &#x3C;summary>
+        /// Autopilot type / class. Use MAV_AUTOPILOT_INVALID for components that are not flight controllers.
+        /// OriginName: autopilot, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public MavAutopilot Autopilot { get; set; }
+        /// &#x3C;summary>
+        /// System mode bitmap.
+        /// OriginName: base_mode, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public MavModeFlag BaseMode { get; set; }
+        /// &#x3C;summary>
+        /// System status flag.
+        /// OriginName: system_status, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public MavState SystemStatus { get; set; }
+        /// &#x3C;summary>
+        /// MAVLink version, not writable by user, gets added by protocol because of magic data type: uint8_t_mavlink_version
+        /// OriginName: mavlink_version, Units: , IsExtended: false
+        /// &#x3C;/summary>
+        public byte MavlinkVersion { get; set; }
+    }
+</code></pre>
