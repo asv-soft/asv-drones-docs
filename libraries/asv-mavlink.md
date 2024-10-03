@@ -26,10 +26,10 @@ Executing this command launches an emulator for an ADS-B receiver, generating an
 
 ```bash
 // run adsb simulator
-Asv.Mavlink.Shell adsb --cfg=adsb.json
+Asv.Mavlink.Shell adsb -cfg adsb.json
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Asv.Mavlink.Shell.exe adsb output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/asv-drones-mavlink-adsb-command.png" alt=""><figcaption><p>Asv.Mavlink.Shell.exe adsb output</p></figcaption></figure>
 
 ### Configuration file
 
@@ -220,3 +220,29 @@ And generate CSharp file, like this:
         public byte MavlinkVersion { get; set; }
     }
 </code></pre>
+
+## CLI: Ftp browser
+
+This command is a file manager for interacting with a drone's file system via FTP. It allows users to browse directories, view files, and perform various file operations (e.g., download, rename, remove, etc.) in an interactive console environment. The tool is designed for MAVLink-based systems and provides an intuitive way to manage the drone’s files and directories.
+
+```bash
+Asv.Mavlink.Shell.exe ftp-browser
+```
+
+<figure><img src="../.gitbook/assets/asv-drones-mavlink-ftp-browser-command.png" alt=""><figcaption><p>Asv.Mavlink.Shell.exe ftp-browser output</p></figcaption></figure>
+
+
+## CLI: Ftp tree
+
+This command provides a tree representation of all available files and directories on the drone's FTP server. It allows users to see the entire file structure in a hierarchical format, making it easy to browse and understand the file layout without navigating through individual folders.
+
+```bash
+Asv.Mavlink.Shell.exe ftp-tree
+```
+<figure><img src="../.gitbook/assets/asv-drones-mavlink-ftp-treecommand.png" alt=""><figcaption><p>Asv.Mavlink.Shell.exe ftp-tree output</p></figcaption></figure>
+
+- Display the full directory structure of the drone's file system in a tree format.
+- Automatically refreshes and loads the / and @SYS directories.
+- Displays directories and files with visual guides for better clarity.
+
+
