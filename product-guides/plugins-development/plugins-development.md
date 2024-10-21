@@ -30,19 +30,20 @@ Ensure the addition of crucial dependencies such as:
 Below is the structure of `Directory.Build.props` file. This describes all dependencies of the main project. Specify an `<ApiVersion>` for your plugin project in the same way 
 
 ```xml
+        <ApiVersion>1.0.1</ApiVersion>
+```
+
+After `Directory.Build.props` of your plugin is set up, it should look something like this:
+```xml
 <Project>
     <PropertyGroup>
-        <ProductVersion>1.0.1</ProductVersion>
-        <ApiVersion>1.0.1</ApiVersion>
-        <ApiPrevVersion>1.0.0</ApiPrevVersion>
-        <AvaloniaVersion>11.0.6</AvaloniaVersion>
-        <AsvCommonVersion>2.0.2</AsvCommonVersion>
-        <AsvAvaloniaToolkitVersion>1.0.1</AsvAvaloniaToolkitVersion>
-        <AsvAvaloniaMapVersion>2.0.5</AsvAvaloniaMapVersion>
-        <AsvMavlinkVersion>3.10.0</AsvMavlinkVersion>
-        <FluentAvaloniaUIVersion>2.0.5</FluentAvaloniaUIVersion>
+        <Nullable>enable</Nullable>
+        <ProductVersion>1.0.0</ProductVersion>
+        <AvaloniaVersion>11.1.0</AvaloniaVersion>
+        <AsvCommonVersion>3.0.0-dev.4</AsvCommonVersion>
+        <ApiVersion>2.0.0-dev.7</ApiVersion>
+        <FluentAvaloniaUIVersion>2.0.0</FluentAvaloniaUIVersion>
         <ReactiveUIVersion>19.5.41</ReactiveUIVersion>
-        <SystemReactiveVersion>6.0.0</SystemReactiveVersion>
         <MaterialIconsAvaloniaVersion>2.0.1</MaterialIconsAvaloniaVersion>
         <ReactiveUIValidationVersion>3.1.7</ReactiveUIValidationVersion>
         <CompositionVersion>8.0.0</CompositionVersion>
@@ -50,20 +51,9 @@ Below is the structure of `Directory.Build.props` file. This describes all depen
 </Project>
 ```
 
-After `Directory.Build.props` of your plugin is set up, it should look something like this:
-```xml
-<Project>
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <ProductVersion>1.0.0</ProductVersion>
-    <ApiVersion>1.0.1</ApiVersion>
-    <ReactiveUIVersion>19.5.41</ReactiveUIVersion>
-  </PropertyGroup>
-</Project>
-```
-
 Finally, set up the `.csproj` file with `PackageReference` that will reference `ApiVersion` from `Directory.Build.props` file. If you want to debug your plugin using the main `Asv.Drones` app - set up `<OutputPath>` attribute. It must point to the plugins folder of the main `Asv.Drones` project. You can also set this up by adding a .NET Executable Run/Debug configuration in your IDE.
 
+Specify `<Title>`, `<Authors>`, `<Description>`, `<PackageLicenseFile>`, `<PackageIconUrl>`. 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -71,42 +61,36 @@ Finally, set up the `.csproj` file with `PackageReference` that will reference `
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <!--        Following tags defines information about plugin displays at Settings/Plugins/Installed page in GUI -->
         <AssemblyVersion>$(ProductVersion)</AssemblyVersion>
         <FileVersion>$(ProductVersion)</FileVersion>
         <Version>$(ProductVersion)</Version>
-        <Title>Weather</Title>
-        <Authors>https://github.com/asv-soft</Authors>
-        <Description>Asv.Drones GUI application plugin to display and customize current weather using Windy and OpenWeatherMap providers.</Description>
-        <Copyright>https://github.com/asv-soft</Copyright>
-        <PackageProjectUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather?tab=MIT-1-ov-file#readme</PackageLicenseUrl>
-        <RepositoryUrl>https://github.com/asv-soft/asv-drones-gui-plugin-weather</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
+        <Title>Example</Title>
+        <Authors>https://example-source.com</Authors>
+        <Description>This is an Example application plugin</Description>
+        <PackageIconUrl>icon.ico</PackageIconUrl>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageTags>Windows;Linux;.net;drone;</PackageTags>
     </PropertyGroup>
-
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <OutputPath>..\..\..\asv-drones\src\Asv.Drones.Gui.Desktop\bin\Debug\net8.0\asv-data-folder\plugins\Asv.Drones.Gui.Plugin.Weather\</OutputPath>
+        <OutputPath>..\..\..\asv-drones\src\Asv.Drones.Gui.Desktop\bin\Debug\net8.0\asv-data-folder\plugins\Asv.Drones.Gui.Plugin.Example</OutputPath>
     </PropertyGroup>
-
     <ItemGroup>
-        <PackageReference Include="Asv.Drones.Gui.Api" Version="$(ApiVersion)" />
-        <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Update="RS.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>RS.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Compile Update="RS.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>RS.resx</DependentUpon>
-        </Compile>
+        <PackageReference Include="Asv.Cfg" Version="$(AsvCommonVersion)"/>
+        <PackageReference Include="System.Composition" Version="$(CompositionVersion)"/>
+        <PackageReference Include="ReactiveUI" Version="$(ReactiveUIVersion)"/>
+        <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIVersion)"/>
+        <PackageReference Include="Material.Icons.Avalonia" Version="$(MaterialIconsAvaloniaVersion)"/>
+        <PackageReference Include="Asv.Drones.Gui.Api" Version="$(ApiVersion)"/>
+        <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc1"/>
+        <None Include="content\icon.ico" PackagePath="content\icon.ico" Pack="true">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="content\LICENSE.md" PackagePath="LICENSE.md" Pack="true">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
 </Project>
