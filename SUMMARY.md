@@ -47,9 +47,29 @@
 * [📲 Microservices](product-guides/microservices/README.md)
   * [📻 Mavlink SDR](product-guides/microservices/mavlink-sdr.md)
 
+## Plugins <a href="#asv-drons-gui-plugins" id="asv-drons-gui-plugins"></a>
+
+* [🙌 Example](asv-drons-gui-plugins/example.md)
+* [Flight docs](asv-drons-gui-plugins/flight-docs.md)
+* [📡 Gbs](asv-drons-gui-plugins/gbs.md)
+* [🌡️ Weather](asv-drons-gui-plugins/weather.md)
+* [✈️ Airports](asv-drons-gui-plugins/airports.md)
+
+## Payloads
+
+* [📡 GBS](payloads/gbs.md)
+* [📻 SDR](payloads/sdr.md)
+
 ## Libraries
 
 * [🧊 Asv.Mavlink](libraries/asv-mavlink.md)
+* [🛰️ Asv.Gnss](libraries/asv-gnss.md)
+* [🪟 Asv.Avalonia.Toolkit](libraries/asv-avalonia-toolkit.md)
+* [🗺️ Asv.Avalonia.Map](libraries/asv-avalonia-map.md)
+* [💬 Asv.Ulog](libraries/asv-ulog.md)
+* [🎧 Asv.Audio](libraries/asv-audio.md)
+* [⌨️ Asv.Hal](libraries/asv-audio-1.md)
+* [⌨️ Asv.Cfg](libraries/asv-audio-2.md)
 
 ## Use Cases
 
