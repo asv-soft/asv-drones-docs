@@ -477,3 +477,31 @@ Options:
   -r|--refresh-rate <uint>              (in ms) States how fast should the console be refreshed (Default: 1000)
 
 ```
+
+## CLI: Create Virtual Ftp server
+This command creates ftp server and opens connection to it.
+
+```bash
+Asv.Mavlink.Shell.exe run-ftp-server
+```
+
+<figure><img src="../.gitbook/assets/screenshot-run-ftp-server.png" alt=""><figcaption></figcaption></figure>
+
+The program generates a default configuration file by default, but you can provide a custom configuration.
+Simply pass the path to your configuration file as a command-line parameter.
+
+*Note: config is a json file.*
+
+```bash
+Asv.Mavlink.Shell.exe run-ftp-server -cfg "path/to/your/cfg.json"
+```
+
+All the possible parameters for the command:
+```bash
+Usage: run-ftp-server [options...] [-h|--help] [--version]
+
+Command creates virtual ftp server.
+
+Options:
+  -cfg|--cfg-path <string?>    location of the config file (Default: null)
+```
