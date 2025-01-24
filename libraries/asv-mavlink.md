@@ -403,8 +403,47 @@ Full possible command with all the parameters
 ```bash
 Asv.Mavlink.Shell.exe devices-info -cs "tcp://127.0.0.1:7341" -i 400 -dt 20 -r 1000
 ```
+## CLI: Print Vehicle State
+```bash
+Asv.Mavlink.Shell.exe print-vehicle-state --connection tcp://127.0.0.1:5762
+```
+This command starts the console implementation of UAV controls and Telemetry
+
+<span style="color: red;">
+  <strong>
+    WARNING! Use this command only with simulator because command does not provide full functionality to safe flight. Use this command only for education or introductory purposes
+  </strong>
+</span>
+
+![image](https://github.com/asv-soft/asv-drones-docs/blob/main/.gitbook/assets/asv-drones-mavlink-print-vehicle-state.png?raw=true)
+
+Print Vehicle state provides some function to control UAV and also displays some telemetry values such as: 
+- Link - current state of link between UAV and router;
+- Home Position - Point of Start and target of RTL command;
+- Global Position - Current UAV location with altitudes MSL(Mean sea level) and AGL (Above ground level);
+- Current Azimuth;
+- Mavlink Version - version of protocol which operates of process;
+- Base Mode - list of base modes supported by current vehicle;
+- AutoPilot - Current type of autopilot;
+- System Status;
+- Type - representation of  device type according to MAV_TYPE;
+
+Table "Log" displays list of recent commands that was executed in CLI. 
+
+## CLI: Params command
+
+```bash
+Asv.Mavlink.Shell.exe params --connection tcp://127.0.0.1:5762
+```
+
+Use this command to see parameters of mavlink devices that available on specified tcp connection.
+
+![image](https://github.com/asv-soft/asv-drones-docs/blob/main/.gitbook/assets/asv-drones-params-command.png?raw=true)
+
+Provides observer of UAV params with navigation and search. 
 
 ## CLI: Packet Viewer
+
 ```bash
 Asv.Mavlink.Shell.exe packetviewer --connection tcp://127.0.0.1:5762
 ```
