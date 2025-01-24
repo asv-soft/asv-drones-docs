@@ -415,7 +415,7 @@ This command starts the console implementation of UAV controls and Telemetry
   </strong>
 </span>
 
-![image](https://github.com/asv-soft/asv-drones-docs/blob/main/.gitbook/assets/asv-drones-mavlink-print-vehicle-state.png?raw=true)
+![image](https://github.com/asv-soft/asv-drones-docs/blob/main/.gitbook/assets/asv-drones-print-vehicle-state.png?raw=true)
 
 Print Vehicle state provides some function to control UAV and also displays some telemetry values such as: 
 - Link - current state of link between UAV and router;
